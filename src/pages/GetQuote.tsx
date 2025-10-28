@@ -489,7 +489,7 @@ export default function GetQuote() {
               "Data Science & Machine Learning",
               "Cloud Computing & DevOps",
               "Cybersecurity & Ethical Hacking",
-              "Mobile App Development",
+              "Mobile App Development & Web App",
               "UI/UX Design & Product Design",
               "Digital Marketing & Analytics",
               "Blockchain & Web3 Development"
@@ -584,10 +584,13 @@ export default function GetQuote() {
           <p className="text-xl text-white/90 mb-8">
             Let's grow together. Schedule a call to discuss your training needs.
           </p>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" data-testid="button-schedule-call">
-            <Briefcase className="w-5 h-5 mr-2" />
-            Schedule a Call
-          </Button>
+          <a href="https://cal.com/intelleq-academy-ki5wwv/30min" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" data-testid="button-schedule-call">
+              <Briefcase className="w-5 h-5 mr-2" />
+              Schedule a Call
+            </Button>
+          </a>
+
         </div>
       </section>
 

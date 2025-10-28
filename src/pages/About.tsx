@@ -11,17 +11,19 @@ import {
   Award,
   Users,
   Globe,
-
   CheckCircle2,
   Lightbulb,
-
   Briefcase,
   Star,
   Heart,
   Zap,
   Shield,
   Clock,
-  Trophy
+  Trophy,
+  Calendar,
+  Rocket,
+  GraduationCap,
+  TrendingUp
 } from "lucide-react";
 
 export default function About() {
@@ -31,6 +33,7 @@ export default function About() {
   const [whyRef, whyInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [achievementsRef, achievementsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [approachRef, approachInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [timelineRef, timelineInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [teamRef, teamInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [worldwideRef, worldwideInView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
@@ -142,6 +145,57 @@ export default function About() {
     }
   ];
 
+  const timelineData = [
+    {
+      year: "2018",
+      title: "Foundation",
+      description: "IntelleQacademy was born with a vision to revolutionize tech education",
+      icon: Target,
+      achievements: ["First batch of 50 students", "Core curriculum developed", "Industry expert instructors onboarded"],
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      year: "2019",
+      title: "Growth",
+      description: "Expanded course offerings and established industry partnerships",
+      icon: TrendingUp,
+      achievements: ["10+ specialized courses", "500+ students trained", "First corporate partnerships"],
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      year: "2020",
+      title: "Innovation",
+      description: "Pioneered online learning with AI-powered personalized education",
+      icon: Rocket,
+      achievements: ["AI learning platform launch", "Remote learning infrastructure", "1000+ active students"],
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      year: "2021",
+      title: "Expansion",
+      description: "Global reach with students from 25+ countries and new international offices",
+      icon: Globe,
+      achievements: ["International expansion", "25+ countries served", "Multilingual course offerings"],
+      color: "from-orange-500 to-red-500"
+    },
+    {
+      year: "2022",
+      title: "Excellence",
+      description: "Achieved industry recognition and highest student satisfaction rates",
+      icon: Award,
+      achievements: ["Industry awards won", "95% placement rate", "4.8/5 student rating"],
+      color: "from-yellow-500 to-amber-500"
+    },
+    {
+      year: "2023",
+      title: "Transformation",
+      description: "Became a leading force in tech education with 5000+ successful graduates",
+      icon: GraduationCap,
+      achievements: ["5000+ graduates", "150+ corporate clients", "20+ expert trainers"],
+      color: "from-indigo-500 to-purple-500"
+    }
+  ];
+
   const teamValues = [
     "Passionate educators committed to student success",
     "Industry veterans from top tech companies",
@@ -167,7 +221,7 @@ export default function About() {
               Empowering the Next Generation of Tech Leaders
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              We're on a mission to democratize quality tech education and bridge the gap 
+              We're on a mission to democratize quality tech education and bridge the gap
               between academic learning and industry requirements.
             </p>
           </motion.div>
@@ -175,51 +229,51 @@ export default function About() {
       </section>
 
       {/* Mission & Vision Section */}
-<section ref={missionRef} className="py-20 bg-secondary/20">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid md:grid-cols-2 gap-8 items-stretch"> {/* items-stretch makes children equal height */}
-      <motion.div
-        initial={{ opacity: 0, x: -30 }}
-        animate={missionInView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.6 }}
-        className="h-full" 
-      >
-        <GlassCard className="p-8 h-full flex flex-col"> {/* flex-col and h-full */}
-          <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6">
-            <Target className="w-8 h-8 text-white" />
-          </div>
-          <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
-          <p className="text-muted-foreground leading-relaxed text-lg flex-grow"> {/* flex-grow makes paragraph fill remaining space */}
-            To provide world-class, affordable tech education that transforms 
-            aspiring professionals into industry-ready experts. We believe in 
-            practical learning, real-world projects, and personalized mentorship 
-            to ensure every student achieves their career goals.
-          </p>
-        </GlassCard>
-      </motion.div>
+      <section ref={missionRef} className="py-20 bg-secondary/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8 items-stretch">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={missionInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6 }}
+              className="h-full"
+            >
+              <GlassCard className="p-8 h-full flex flex-col">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6">
+                  <Target className="w-8 h-8 text-white" />
+                </div>
+                <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
+                <p className="text-muted-foreground leading-relaxed text-lg flex-grow">
+                  To provide world-class, affordable tech education that transforms
+                  aspiring professionals into industry-ready experts. We believe in
+                  practical learning, real-world projects, and personalized mentorship
+                  to ensure every student achieves their career goals.
+                </p>
+              </GlassCard>
+            </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, x: 30 }}
-        animate={missionInView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="h-20"
-      >
-        <GlassCard  className="p-8 h-[350px] flex flex-col" > {/* flex-col and h-full */}
-          <div className="w-16 h-16 bg-gradient-to-br from-accent to-chart-2 rounded-xl flex items-center justify-center mb-6">
-            <Eye className="w-8 h-8 text-white" />
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={missionInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="h-full"
+            >
+              <GlassCard className="p-8 h-full flex flex-col">
+                <div className="w-16 h-16 bg-gradient-to-br from-accent to-chart-2 rounded-xl flex items-center justify-center mb-6">
+                  <Eye className="w-8 h-8 text-white" />
+                </div>
+                <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
+                <p className="text-muted-foreground leading-relaxed text-lg flex-grow">
+                  To become the most trusted platform for tech education globally,
+                  where students from any background can access cutting-edge skills,
+                  build meaningful careers, and contribute to innovation that shapes
+                  the future of technology.
+                </p>
+              </GlassCard>
+            </motion.div>
           </div>
-          <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
-          <p className="text-muted-foreground leading-relaxed text-lg flex-grow"> {/* flex-grow makes paragraph fill remaining space */}
-            To become the most trusted platform for tech education globally, 
-            where students from any background can access cutting-edge skills, 
-            build meaningful careers, and contribute to innovation that shapes 
-            the future of technology.
-          </p>
-        </GlassCard>
-      </motion.div>
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* Core Values Section */}
       <section ref={valuesRef} className="py-20">
@@ -374,6 +428,85 @@ export default function About() {
         </div>
       </section>
 
+      {/* Timeline Section */}
+<section ref={timelineRef} className="py-20 bg-gradient-to-b from-background to-secondary/20">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {/* Heading */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={timelineInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6 }}
+      className="text-center mb-16"
+    >
+      <Calendar className="w-16 h-16 text-primary mx-auto mb-6" />
+      <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-gradient bg-clip-text text-transparent from-primary to-accent">
+        Our Journey Through Time
+      </h2>
+      <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+        From humble beginnings to becoming a leading force in tech education
+      </p>
+    </motion.div>
+
+    <div className="relative">
+      {/* Timeline line for desktop */}
+      <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-primary via-accent to-chart-2 h-full"></div>
+
+      <div className="space-y-12 lg:space-y-20">
+        {timelineData.map((item, index) => {
+          const IconComponent = item.icon;
+          const isReversed = index % 2 === 0; // reverse every other card
+
+          return (
+            <motion.div
+              key={item.year}
+              initial={{ opacity: 0, y: 20 }}
+              animate={timelineInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              className={`relative flex flex-col lg:flex-row items-center lg:items-start ${isReversed ? 'lg:flex-row-reverse' : ''}`}
+            >
+              {/* Content Card */}
+              <div className={`lg:w-1/2 mb-6 lg:mb-0 ${isReversed ? 'lg:pr-16' : 'lg:pl-16'}`}>
+                <GlassCard className="hover:shadow-2xl transition-all duration-300 border border-white/20 hover:border-primary/50 rounded-2xl">
+                  <CardContent className="p-6">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+                      <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center flex-shrink-0`}>
+                        <IconComponent className="w-8 h-8 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
+                          <h3 className="text-2xl font-bold text-primary">{item.year}</h3>
+                          <h4 className="text-xl font-semibold text-white">{item.title}</h4>
+                        </div>
+                        <p className="text-muted-foreground mb-3 leading-relaxed">
+                          {item.description}
+                        </p>
+                        <ul className="space-y-1">
+                          {item.achievements.map((achievement, achievementIndex) => (
+                            <li key={achievementIndex} className="flex items-center text-sm text-muted-foreground">
+                              <div className="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                              {achievement}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </CardContent>
+                </GlassCard>
+              </div>
+
+              {/* Spacer for mobile */}
+              <div className="lg:w-1/2"></div>
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
       {/* Team & Culture Section */}
       <section ref={teamRef} className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -399,14 +532,14 @@ export default function About() {
                 <div>
                   <h3 className="text-2xl font-bold mb-6">Who We Are</h3>
                   <p className="text-muted-foreground leading-relaxed mb-6">
-                    IntelleQacademy is powered by a diverse team of tech enthusiasts, 
-                    educators, and industry professionals. Our instructors have worked 
-                    at companies like Google, Amazon, Microsoft, and leading startups, 
+                    IntelleQacademy is powered by a diverse team of tech enthusiasts,
+                    educators, and industry professionals. Our instructors have worked
+                    at companies like Google, Amazon, Microsoft, and leading startups,
                     bringing real-world expertise to every session.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    We're not just teachers – we're mentors, career guides, and your 
-                    partners in success. Every team member is dedicated to one goal: 
+                    We're not just teachers – we're mentors, career guides, and your
+                    partners in success. Every team member is dedicated to one goal:
                     helping you achieve your career dreams.
                   </p>
                 </div>
@@ -446,7 +579,7 @@ export default function About() {
               <span className="text-primary">Worldwide</span> Operations
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-              From our headquarters in Bangalore to our offices in San Francisco and Europe, we deliver 
+              From our headquarters in Bangalore to our offices in San Francisco and Europe, we deliver
               exceptional IT solutions and Industry 5.0 certifications to clients worldwide with strategic global presence.
             </p>
           </motion.div>

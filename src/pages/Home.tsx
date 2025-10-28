@@ -105,21 +105,21 @@ export default function Home() {
   const comparisonData = [
     {
       program: "MERN Stack",
-      duration: "2 Months",
+      duration: "3 Months",
       mode: "Live + Recorded",
       certification: true,
       internship: true
     },
     {
       program: "Data Science",
-      duration: "2 Months",
+      duration: "3 Months",
       mode: "Live + Recorded",
       certification: true,
       internship: true
     },
     {
       program: "Cyber Security",
-      duration: "2 Months",
+      duration: "3 Months",
       mode: "Live",
       certification: true,
       internship: true

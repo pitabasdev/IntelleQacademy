@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import {  Linkedin, Instagram, Youtube, Mail, Phone, MapPin, Shield, Award, CreditCard, Lock } from "lucide-react";
+import { Linkedin, Instagram, Youtube, Twitter, Mail, Phone, MapPin, Shield, Award, CreditCard, Lock } from "lucide-react";
 
 export function Footer() {
   const quickLinks = [
@@ -29,30 +29,45 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-                <Link href="/" data-testid="link-home">
-            <button className="flex items-center hover-elevate active-elevate-2 px-3 py-2 rounded-md transition-all">
-              <img
-                src="/1.png"
-                alt="IntelleQacademy Logo"
-                className="h-9 mb-5 pl-4 object-contain"
-              />
-            </button>
-          </Link>
+            <Link href="/" data-testid="link-home">
+              <button className="flex items-center hover-elevate active-elevate-2 px-[-1px] py-2 rounded-md transition-all">
+                <img
+                  src="/1.png"
+                  alt="IntelleQacademy Logo"
+                  className="h-9 mb-5 pl-4 object-contain"
+                />
+              </button>
+            </Link>
 
             <p className="text-white/70 text-sm mb-6 leading-relaxed">
               Empowering future tech leaders with real-world skills through hands-on training and expert mentorship.
             </p>
             <div className="flex gap-3">
-              <button className="w-10 h-10 bg-white/10 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-all hover-elevate active-elevate-2" data-testid="social-linkedin">
-                <Linkedin className="w-5 h-5" />
-              </button>
-              <button className="w-10 h-10 bg-white/10 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-all hover-elevate active-elevate-2" data-testid="social-instagram">
-                <Instagram className="w-5 h-5" />
-              </button>
-              <button className="w-10 h-10 bg-white/10 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-all hover-elevate active-elevate-2" data-testid="social-youtube">
-                <Youtube className="w-5 h-5" />
-              </button>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" data-testid="social-linkedin">
+                <button className="w-10 h-10 bg-white/10 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-all hover-elevate active-elevate-2">
+                  <Linkedin className="w-5 h-5" />
+                </button>
+              </a>
+
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" data-testid="social-instagram">
+                <button className="w-10 h-10 bg-white/10 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-all hover-elevate active-elevate-2">
+                  <Instagram className="w-5 h-5" />
+                </button>
+              </a>
+
+              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" data-testid="social-youtube">
+                <button className="w-10 h-10 bg-white/10 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-all hover-elevate active-elevate-2">
+                  <Youtube className="w-5 h-5" />
+                </button>
+              </a>
+
+              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" data-testid="social-twitter">
+                <button className="w-10 h-10 bg-white/10 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-all hover-elevate active-elevate-2">
+                  <Twitter className="w-5 h-5" />
+                </button>
+              </a>
             </div>
+
           </div>
 
           {/* Quick Links */}
@@ -145,8 +160,9 @@ export function Footer() {
         {/* Certifications & Security Badges */}
         <div className="border-t border-white/10 pt-8 mb-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+
             {/* Certifications */}
-            <div className="flex flex-col sm:flex-row items-center gap-6 flex-wrap justify-center">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:flex md:gap-6 w-full justify-center">
               <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg border border-white/10">
                 <Award className="w-5 h-5 text-primary" />
                 <div className="text-left">
@@ -154,7 +170,7 @@ export function Footer() {
                   <div className="text-sm font-semibold text-white">ISO 9001:2015</div>
                 </div>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg border border-white/10">
+              <div className="flex items-center gap-2 px-4 py-2 ml-2 bg-white/5 rounded-lg border border-white/10">
                 <Shield className="w-5 h-5 text-accent" />
                 <div className="text-left">
                   <div className="text-xs text-white/50">Verified</div>
@@ -164,7 +180,7 @@ export function Footer() {
             </div>
 
             {/* Payment Security */}
-            <div className="flex flex-col sm:flex-row items-center gap-6 flex-wrap justify-center">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:flex md:gap-6 w-full justify-center">
               <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg border border-white/10">
                 <Lock className="w-5 h-5 text-green-400" />
                 <div className="text-left">
@@ -172,7 +188,7 @@ export function Footer() {
                   <div className="text-sm font-semibold text-white">SSL Encrypted</div>
                 </div>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg border border-white/10">
+              <div className="flex items-center gap-2 px-4 py-2 ml-2 bg-white/5 rounded-lg border border-white/10">
                 <CreditCard className="w-5 h-5 text-blue-400" />
                 <div className="text-left">
                   <div className="text-xs text-white/50">Payment</div>
@@ -180,18 +196,30 @@ export function Footer() {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
 
+
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-6">
+          {/* Copyright and Trusted Text */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/50">
             <p className="text-center md:text-left">
-              © {new Date().getFullYear()} IntelleQacademy. All rights reserved. Built with ❤️ for aspiring tech professionals.
+              © {new Date().getFullYear()} IntelleQacademy. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
               <span className="text-xs">Trusted by 5000+ Students Worldwide</span>
             </div>
+          </div>
+
+          {/* Trusted/Payment Logos */}
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
+            <img src="https://res.cloudinary.com/df07zpsev/image/upload/v1761659626/ftr-razorpay_savzrm.png" alt="Razorpay" className="h-8 object-contain" />
+            <img src="https://res.cloudinary.com/df07zpsev/image/upload/v1761659626/ftr-easebuzz_vlbo8c.png" alt="Easebuzz" className="h-8 object-contain" />
+            <img src="https://res.cloudinary.com/df07zpsev/image/upload/v1761659626/Frame-1686563909_kc6bwv.png" alt="Skill India" className="h-8 object-contain" />
+            <img src="https://res.cloudinary.com/df07zpsev/image/upload/v1761659626/Frame-1686563910_gukfzv.png" alt="Microsoft" className="h-8 object-contain" />
+            <img src="https://res.cloudinary.com/df07zpsev/image/upload/v1761659626/Frame-1686563909_kc6bwv.png" alt="NSDC" className="h-8 object-contain" />
           </div>
         </div>
       </div>

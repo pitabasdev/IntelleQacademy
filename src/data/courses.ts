@@ -318,7 +318,7 @@ export const testimonialsData = [
     id: "2",
     name: "Rahul Verma",
     role: "Data Scientist",
-    company: "Zidio Development",
+    company: "Amazon",
     message: "The Data Science course was exactly what I needed. Real-world datasets, industry-standard tools, and excellent instructor support made all the difference.",
   },
   {
