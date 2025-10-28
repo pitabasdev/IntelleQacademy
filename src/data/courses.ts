@@ -26,7 +26,17 @@ export const coursesData: CourseProgram[] = [
       "Microservices Architecture Basics",
       "Performance Optimization & Security Best Practices"
     ],
-    tools: ["React", "Node.js", "MongoDB", "Express", "Redux", "Git", "Docker", "AWS", "VS Code"]
+    tools: ["React", "Node.js", "MongoDB", "Express", "Redux", "Git", "Docker", "AWS", "VS Code"],
+    weeklyPlan: [
+      { week: 1, title: "Frontend Fundamentals", topics: ["HTML5 semantic elements & CSS3 styling", "JavaScript ES6+ features and concepts", "DOM manipulation and event handling"] },
+      { week: 2, title: "React Basics", topics: ["Components, Props & JSX syntax", "React Hooks (useState, useEffect)", "Event handling and form management"] },
+      { week: 3, title: "Advanced React", topics: ["State management with Redux", "React Router for navigation", "API integration and data fetching"] },
+      { week: 4, title: "Backend with Node.js", topics: ["Node.js fundamentals & npm packages", "Express.js server setup & routing", "Middleware and error handling"] },
+      { week: 5, title: "Database & APIs", topics: ["MongoDB schema design & queries", "RESTful API development", "Authentication with JWT"] },
+      { week: 6, title: "Full Stack Integration", topics: ["Connect React frontend with backend", "File upload & image handling", "Real-time features with WebSockets"] },
+      { week: 7, title: "Testing & Security", topics: ["Unit testing with Jest", "Security best practices & HTTPS", "Input validation and sanitization"] },
+      { week: 8, title: "Deployment & DevOps", topics: ["Docker containerization basics", "AWS deployment and CI/CD", "Performance optimization & monitoring"] }
+    ]
   },
   {
     id: "java-fullstack",
@@ -53,7 +63,17 @@ export const coursesData: CourseProgram[] = [
       "Testing with JUnit & Mockito",
       "Deployment on AWS & Docker"
     ],
-    tools: ["Java", "Spring Boot", "React", "MySQL", "PostgreSQL", "Maven", "Docker", "IntelliJ IDEA"]
+    tools: ["Java", "Spring Boot", "React", "MySQL", "PostgreSQL", "Maven", "Docker", "IntelliJ IDEA"],
+    weeklyPlan: [
+      { week: 1, title: "Java Fundamentals", topics: ["Java syntax and OOP principles", "Collections Framework & Generics", "Exception handling and file I/O"] },
+      { week: 2, title: "Spring Framework Basics", topics: ["Spring Core & Dependency Injection", "Spring MVC architecture", "Application configuration & beans"] },
+      { week: 3, title: "Spring Boot Development", topics: ["Spring Boot project setup", "RESTful API creation with annotations", "Request mapping and data validation"] },
+      { week: 4, title: "Database Integration", topics: ["Spring Data JPA fundamentals", "Hibernate ORM and entity relationships", "MySQL/PostgreSQL database design"] },
+      { week: 5, title: "Frontend with React", topics: ["React components and hooks", "Axios for API integration", "Building responsive UI with React"] },
+      { week: 6, title: "Security & Authentication", topics: ["Spring Security configuration", "JWT token-based authentication", "Role-based access control"] },
+      { week: 7, title: "Microservices & Testing", topics: ["Microservices architecture with Spring Cloud", "Unit testing with JUnit and Mockito", "Integration testing strategies"] },
+      { week: 8, title: "Deployment & Best Practices", topics: ["Docker containerization for Java apps", "AWS deployment and cloud services", "CI/CD pipeline setup"] }
+    ]
   },
   {
     id: "data-analytics",
@@ -80,7 +100,17 @@ export const coursesData: CourseProgram[] = [
       "A/B Testing & Hypothesis Testing",
       "Case Studies & Real-world Projects"
     ],
-    tools: ["Excel", "SQL", "Python", "Pandas", "Tableau", "Power BI", "Jupyter Notebook"]
+    tools: ["Excel", "SQL", "Python", "Pandas", "Tableau", "Power BI", "Jupyter Notebook"],
+    weeklyPlan: [
+      { week: 1, title: "Excel Mastery", topics: ["Advanced Excel formulas & functions", "Pivot tables and data analysis tools", "Data cleaning and transformation in Excel"] },
+      { week: 2, title: "SQL Fundamentals", topics: ["Database concepts and SQL basics", "Joins, subqueries & aggregations", "Complex queries and performance optimization"] },
+      { week: 3, title: "Python for Analytics", topics: ["Python basics and Pandas library", "NumPy for numerical computations", "Data manipulation and transformation"] },
+      { week: 4, title: "Data Visualization", topics: ["Matplotlib and Seaborn basics", "Creating dashboards with Tableau", "Power BI for business intelligence"] },
+      { week: 5, title: "Statistical Analysis", topics: ["Descriptive and inferential statistics", "Probability distributions", "Correlation and regression analysis"] },
+      { week: 6, title: "Exploratory Data Analysis", topics: ["Data cleaning techniques", "Handling missing values and outliers", "Feature engineering fundamentals"] },
+      { week: 7, title: "Business Analytics", topics: ["KPI identification and tracking", "A/B testing and hypothesis testing", "Customer segmentation analysis"] },
+      { week: 8, title: "Real-world Projects", topics: ["Sales performance dashboard", "Customer churn prediction", "Market basket analysis case study"] }
+    ]
   },
   {
     id: "data-science-ml",
@@ -107,7 +137,17 @@ export const coursesData: CourseProgram[] = [
       "Model Evaluation & Hyperparameter Tuning",
       "MLOps & Model Deployment (Flask, FastAPI, Docker)"
     ],
-    tools: ["Python", "Jupyter", "TensorFlow", "Scikit-learn", "Pandas", "NumPy", "Keras", "Docker"]
+    tools: ["Python", "Jupyter", "TensorFlow", "Scikit-learn", "Pandas", "NumPy", "Keras", "Docker"],
+    weeklyPlan: [
+      { week: 1, title: "Python & Statistics Basics", topics: ["Python programming fundamentals", "NumPy and Pandas introduction", "Statistical concepts and distributions"] },
+      { week: 2, title: "Data Analysis", topics: ["Advanced Pandas operations", "Data cleaning and preprocessing", "Exploratory data analysis techniques"] },
+      { week: 3, title: "Data Visualization", topics: ["Matplotlib and Seaborn mastery", "Interactive plots with Plotly", "Dashboard creation fundamentals"] },
+      { week: 4, title: "Supervised Learning", topics: ["Linear and logistic regression", "Classification algorithms (KNN, SVM)", "Model evaluation metrics"] },
+      { week: 5, title: "Advanced ML Algorithms", topics: ["Decision trees and random forests", "Ensemble methods and XGBoost", "Feature selection and engineering"] },
+      { week: 6, title: "Unsupervised Learning", topics: ["Clustering algorithms (K-means, DBSCAN)", "Dimensionality reduction (PCA, t-SNE)", "Anomaly detection techniques"] },
+      { week: 7, title: "Deep Learning Basics", topics: ["Neural networks fundamentals", "TensorFlow and Keras introduction", "Training and optimizing models"] },
+      { week: 8, title: "MLOps & Deployment", topics: ["Model deployment with Flask/FastAPI", "Docker containerization", "Building end-to-end ML pipeline"] }
+    ]
   },
   {
     id: "python-development",
@@ -134,7 +174,17 @@ export const coursesData: CourseProgram[] = [
       "Testing & Debugging",
       "Project Deployment & Best Practices"
     ],
-    tools: ["Python", "Django", "Flask", "PostgreSQL", "SQLite", "VS Code", "Git", "PyCharm"]
+    tools: ["Python", "Django", "Flask", "PostgreSQL", "SQLite", "VS Code", "Git", "PyCharm"],
+    weeklyPlan: [
+      { week: 1, title: "Python Basics", topics: ["Python syntax and variables", "Data types and operators", "Control flow and loops"] },
+      { week: 2, title: "Data Structures & Functions", topics: ["Lists, dictionaries, sets, tuples", "Functions and lambda expressions", "List comprehensions and generators"] },
+      { week: 3, title: "Object-Oriented Python", topics: ["Classes and objects", "Inheritance and polymorphism", "Decorators and magic methods"] },
+      { week: 4, title: "File Handling & Modules", topics: ["File I/O operations", "Working with CSV and JSON", "Creating and using modules"] },
+      { week: 5, title: "Web Development with Flask", topics: ["Flask basics and routing", "Templates and forms", "Database integration with SQLAlchemy"] },
+      { week: 6, title: "Django Framework", topics: ["Django project structure", "Models, views, and templates", "Django admin and forms"] },
+      { week: 7, title: "APIs & Automation", topics: ["Building RESTful APIs", "Web scraping with BeautifulSoup", "Task automation with Python"] },
+      { week: 8, title: "Testing & Deployment", topics: ["Unit testing with pytest", "Error handling and logging", "Deploying Python applications"] }
+    ]
   },
   {
     id: "cybersecurity",
@@ -161,7 +211,17 @@ export const coursesData: CourseProgram[] = [
       "Threat Intelligence & Analysis",
       "Security Operations Center (SOC) Fundamentals"
     ],
-    tools: ["Wireshark", "Splunk", "Nessus", "Metasploit", "Burp Suite", "SIEM Tools", "Kali Linux"]
+    tools: ["Wireshark", "Splunk", "Nessus", "Metasploit", "Burp Suite", "SIEM Tools", "Kali Linux"],
+    weeklyPlan: [
+      { week: 1, title: "Security Fundamentals", topics: ["CIA triad and security principles", "Network protocols and architecture", "Introduction to security frameworks"] },
+      { week: 2, title: "Network Security", topics: ["Firewalls and IDS/IPS systems", "VPNs and secure communications", "Network monitoring with Wireshark"] },
+      { week: 3, title: "Cryptography", topics: ["Encryption algorithms (AES, RSA)", "Hash functions and digital signatures", "PKI and certificate management"] },
+      { week: 4, title: "Threat Detection & SIEM", topics: ["Log analysis and correlation", "SIEM tools and Splunk basics", "Security event monitoring"] },
+      { week: 5, title: "Vulnerability Management", topics: ["Vulnerability scanning with Nessus", "Risk assessment and prioritization", "Patch management strategies"] },
+      { week: 6, title: "Incident Response", topics: ["Incident response lifecycle", "Digital forensics fundamentals", "Evidence collection and analysis"] },
+      { week: 7, title: "Cloud Security", topics: ["AWS and Azure security basics", "Cloud compliance and governance", "Securing cloud infrastructure"] },
+      { week: 8, title: "SOC Operations", topics: ["Security operations center setup", "Threat intelligence analysis", "Security compliance and auditing"] }
+    ]
   },
   {
     id: "ethical-hacking",
@@ -188,7 +248,17 @@ export const coursesData: CourseProgram[] = [
       "Cryptography & Password Cracking",
       "Security Testing & Bug Bounty Programs"
     ],
-    tools: ["Kali Linux", "Metasploit", "Burp Suite", "Nmap", "Wireshark", "John the Ripper", "Aircrack-ng"]
+    tools: ["Kali Linux", "Metasploit", "Burp Suite", "Nmap", "Wireshark", "John the Ripper", "Aircrack-ng"],
+    weeklyPlan: [
+      { week: 1, title: "Ethical Hacking Basics", topics: ["Hacking methodology and ethics", "Setting up Kali Linux lab", "Legal aspects of penetration testing"] },
+      { week: 2, title: "Information Gathering", topics: ["Footprinting and OSINT techniques", "Reconnaissance and enumeration", "Social engineering fundamentals"] },
+      { week: 3, title: "Scanning & Enumeration", topics: ["Network scanning with Nmap", "Service and OS detection", "Vulnerability identification"] },
+      { week: 4, title: "System Exploitation", topics: ["Metasploit framework mastery", "Exploiting common vulnerabilities", "Privilege escalation techniques"] },
+      { week: 5, title: "Web Application Hacking", topics: ["OWASP Top 10 vulnerabilities", "SQL injection and XSS attacks", "Burp Suite for web pentesting"] },
+      { week: 6, title: "Wireless & Network Attacks", topics: ["WiFi hacking with Aircrack-ng", "Man-in-the-middle attacks", "Network sniffing and spoofing"] },
+      { week: 7, title: "Advanced Exploitation", topics: ["Malware analysis basics", "Reverse engineering techniques", "Password cracking methods"] },
+      { week: 8, title: "Reporting & Bug Bounty", topics: ["Penetration testing report writing", "Bug bounty hunting strategies", "Responsible disclosure practices"] }
+    ]
   },
   {
     id: "cloud-computing-aws",
@@ -215,7 +285,17 @@ export const coursesData: CourseProgram[] = [
       "Cost Optimization Strategies",
       "AWS Solutions Architect Best Practices"
     ],
-    tools: ["AWS Console", "AWS CLI", "CloudFormation", "Terraform", "Docker", "Kubernetes", "Git"]
+    tools: ["AWS Console", "AWS CLI", "CloudFormation", "Terraform", "Docker", "Kubernetes", "Git"],
+    weeklyPlan: [
+      { week: 1, title: "Cloud Fundamentals", topics: ["Cloud computing concepts and models", "AWS global infrastructure", "Creating and managing AWS account"] },
+      { week: 2, title: "Core Services", topics: ["EC2 instances and compute options", "S3 storage and data management", "VPC networking basics"] },
+      { week: 3, title: "Identity & Database", topics: ["IAM users, roles, and policies", "RDS relational database setup", "DynamoDB NoSQL database"] },
+      { week: 4, title: "Scaling & Load Balancing", topics: ["Auto Scaling Groups configuration", "Elastic Load Balancers", "CloudWatch monitoring"] },
+      { week: 5, title: "Serverless Architecture", topics: ["AWS Lambda functions", "API Gateway integration", "Event-driven architectures"] },
+      { week: 6, title: "DevOps & Infrastructure as Code", topics: ["CloudFormation templates", "Terraform for AWS", "CI/CD with AWS CodePipeline"] },
+      { week: 7, title: "Security & Compliance", topics: ["AWS security best practices", "Encryption and key management", "CloudTrail auditing and logging"] },
+      { week: 8, title: "Optimization & Certification", topics: ["Cost optimization strategies", "AWS Well-Architected Framework", "Solutions Architect certification prep"] }
+    ]
   },
   {
     id: "uiux-design",
@@ -244,7 +324,17 @@ export const coursesData: CourseProgram[] = [
       "Accessibility & Inclusive Design",
       "Portfolio Development & Case Studies"
     ],
-    tools: ["Figma", "Adobe XD", "Sketch", "InVision", "Miro", "Maze", "Hotjar", "Principle"]
+    tools: ["Figma", "Adobe XD", "Sketch", "InVision", "Miro", "Maze", "Hotjar", "Principle"],
+    weeklyPlan: [
+      { week: 1, title: "Design Thinking & Research", topics: ["Design thinking methodology", "User research techniques", "Creating user personas"] },
+      { week: 2, title: "Information Architecture", topics: ["User journey mapping", "Site maps and user flows", "Content organization strategies"] },
+      { week: 3, title: "Wireframing & Prototyping", topics: ["Low-fidelity wireframes", "Interactive prototyping basics", "Design iteration process"] },
+      { week: 4, title: "Visual Design Fundamentals", topics: ["Color theory and psychology", "Typography principles", "Layout and composition"] },
+      { week: 5, title: "Figma Mastery", topics: ["Advanced Figma techniques", "Component libraries creation", "Auto-layout and constraints"] },
+      { week: 6, title: "Responsive Design", topics: ["Mobile-first design approach", "Breakpoints and adaptive layouts", "Touch and gesture interfaces"] },
+      { week: 7, title: "Design Systems", topics: ["Building design systems", "Component documentation", "Accessibility standards (WCAG)"] },
+      { week: 8, title: "Portfolio & Testing", topics: ["Usability testing methods", "Creating case studies", "Building design portfolio"] }
+    ]
   },
   {
     id: "generative-ai",
@@ -273,7 +363,17 @@ export const coursesData: CourseProgram[] = [
       "Ethics & Responsible AI Development",
       "Capstone Generative AI Project"
     ],
-    tools: ["Python", "OpenAI API", "Hugging Face", "LangChain", "Pinecone", "Streamlit", "FastAPI", "Git"]
+    tools: ["Python", "OpenAI API", "Hugging Face", "LangChain", "Pinecone", "Streamlit", "FastAPI", "Git"],
+    weeklyPlan: [
+      { week: 1, title: "Generative AI Fundamentals", topics: ["Evolution of generative AI", "LLMs and their capabilities", "Setting up AI development environment"] },
+      { week: 2, title: "Prompt Engineering", topics: ["Effective prompt design techniques", "Few-shot and zero-shot learning", "Prompt optimization strategies"] },
+      { week: 3, title: "OpenAI API Integration", topics: ["GPT API implementation", "Chat completions and function calling", "Streaming responses"] },
+      { week: 4, title: "Image Generation", topics: ["DALL-E and image creation", "Stable Diffusion basics", "Prompt engineering for images"] },
+      { week: 5, title: "Embeddings & Vector DBs", topics: ["Text embeddings concepts", "Vector databases (Pinecone, Chroma)", "Semantic search implementation"] },
+      { week: 6, title: "RAG Systems", topics: ["Retrieval Augmented Generation", "Document processing and chunking", "Building Q&A systems"] },
+      { week: 7, title: "LangChain & AI Agents", topics: ["LangChain framework basics", "Building AI agents and chains", "Memory and conversation history"] },
+      { week: 8, title: "AI App Development", topics: ["Building production AI apps", "Streamlit dashboards", "Ethics and responsible AI"] }
+    ]
   },
   {
     id: "deep-learning-llm",
@@ -302,7 +402,17 @@ export const coursesData: CourseProgram[] = [
       "Model Optimization & Deployment",
       "Advanced Topics: Reinforcement Learning, GANs"
     ],
-    tools: ["Python", "PyTorch", "TensorFlow", "Keras", "Transformers", "CUDA", "Weights & Biases", "Jupyter"]
+    tools: ["Python", "PyTorch", "TensorFlow", "Keras", "Transformers", "CUDA", "Weights & Biases", "Jupyter"],
+    weeklyPlan: [
+      { week: 1, title: "Deep Learning Foundations", topics: ["Neural network mathematics", "Gradient descent and backpropagation", "PyTorch and TensorFlow basics"] },
+      { week: 2, title: "Convolutional Networks", topics: ["CNN architecture design", "Image classification tasks", "Transfer learning techniques"] },
+      { week: 3, title: "Recurrent Networks", topics: ["RNNs and LSTM networks", "Sequence modeling", "Time series prediction"] },
+      { week: 4, title: "Attention & Transformers", topics: ["Attention mechanisms explained", "Transformer architecture", "Self-attention and multi-head attention"] },
+      { week: 5, title: "Language Models", topics: ["BERT architecture deep dive", "GPT model understanding", "Pre-training and tokenization"] },
+      { week: 6, title: "Training LLMs", topics: ["Large-scale model training", "Fine-tuning strategies", "Hyperparameter optimization"] },
+      { week: 7, title: "Advanced NLP & Vision", topics: ["NLP tasks with transformers", "Computer vision with CNNs", "Multi-modal learning"] },
+      { week: 8, title: "Deployment & Advanced Topics", topics: ["Model optimization and quantization", "Deploying deep learning models", "GANs and reinforcement learning intro"] }
+    ]
   }
 ];
 

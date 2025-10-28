@@ -198,7 +198,7 @@ export default function CourseDetail() {
               <div>
                 <h2 className="text-3xl font-bold mb-6">8-Week Learning Plan</h2>
                 <div className="space-y-4">
-                  {[
+                  {(course.weeklyPlan || [
                     { week: 1, title: "Foundation & Setup", topics: ["Introduction to fundamentals", "Development environment setup", "Basic concepts and syntax"] },
                     { week: 2, title: "Core Concepts", topics: ["Deep dive into core principles", "Hands-on exercises", "Best practices introduction"] },
                     { week: 3, title: "Intermediate Techniques", topics: ["Advanced concepts", "Real-world examples", "Code optimization"] },
@@ -207,7 +207,7 @@ export default function CourseDetail() {
                     { week: 6, title: "Project 2 - Advanced", topics: ["Complex project implementation", "Integration techniques", "Testing strategies"] },
                     { week: 7, title: "Industry Best Practices", topics: ["Security considerations", "Scalability patterns", "Deployment strategies"] },
                     { week: 8, title: "Final Project & Review", topics: ["Capstone project", "Code review", "Career preparation"] }
-                  ].map((weekPlan, index) => (
+                  ]).map((weekPlan, index) => (
                     <motion.div
                       key={weekPlan.week}
                       initial={{ opacity: 0, x: -20 }}

@@ -47,6 +47,13 @@ export const insertJobApplicationSchema = createInsertSchema(jobApplications).om
 export type InsertJobApplication = z.infer<typeof insertJobApplicationSchema>;
 export type JobApplication = typeof jobApplications.$inferSelect;
 
+// Week Learning Plan Interface
+export interface WeekPlan {
+  week: number;
+  title: string;
+  topics: string[];
+}
+
 // Course Program Interface (not stored in DB, used for frontend display)
 export interface CourseProgram {
   id: string;
@@ -63,6 +70,7 @@ export interface CourseProgram {
   mentees?: string;
   price?: number;
   originalPrice?: number;
+  weeklyPlan?: WeekPlan[];
 }
 
 // Testimonial Interface

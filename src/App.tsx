@@ -8,6 +8,8 @@ import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Chatbot } from "@/components/Chatbot";
 import { EnrollmentPopup } from "@/components/EnrollmentPopup";
+import { DiscountBar } from "@/components/DiscountBar";
+import { RandomEnrollmentNotification } from "@/components/RandomEnrollmentNotification";
 import Home from "@/pages/Home";
 import Courses from "@/pages/Courses";
 import CourseDetail from "@/pages/CourseDetail";
@@ -47,14 +49,16 @@ function App() {
       <TooltipProvider>
         <ScrollToTop />
         <div className="flex flex-col min-h-screen overflow-x-hidden">
+          <DiscountBar />
           <Navbar />
-          <main className="flex-1 overflow-x-hidden">
+          <main className="flex-1 overflow-x-hidden pt-[108px]">
             <Router />
           </main>
           <Footer />
         </div>
         <Chatbot />
         <EnrollmentPopup />
+        <RandomEnrollmentNotification />
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
