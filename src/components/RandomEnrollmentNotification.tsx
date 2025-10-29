@@ -20,7 +20,19 @@ const notifications: EnrollmentNotification[] = [
   { name: "Kavya N.", course: "Data Analytics", location: "Ahmedabad", timeAgo: "25 mins ago" },
   { name: "Arjun B.", course: "Ethical Hacking", location: "Jaipur", timeAgo: "30 mins ago" },
   { name: "Divya S.", course: "Generative AI", location: "Surat", timeAgo: "35 mins ago" },
+
+  { name: "Neha G.", course: "Machine Learning", location: "Indore", timeAgo: "38 mins ago" },
+  { name: "Siddharth P.", course: "DevOps Engineering", location: "Nagpur", timeAgo: "42 mins ago" },
+  { name: "Tanvi R.", course: "Android Development", location: "Noida", timeAgo: "45 mins ago" },
+  { name: "Manish K.", course: "React Native", location: "Lucknow", timeAgo: "49 mins ago" },
+  { name: "Pooja S.", course: "AI & Deep Learning", location: "Bhubaneswar", timeAgo: "52 mins ago" },
+  { name: "Nikhil V.", course: "Blockchain Development", location: "Chandigarh", timeAgo: "56 mins ago" },
+  { name: "Ritika C.", course: "Full Stack with Django", location: "Coimbatore", timeAgo: "59 mins ago" },
+  { name: "Harshit T.", course: "Software Testing", location: "Patna", timeAgo: "1 hr ago" },
+  { name: "Megha L.", course: "Frontend Development", location: "Visakhapatnam", timeAgo: "1 hr 5 mins ago" },
+  { name: "Karan J.", course: "AI-Powered Web Apps", location: "Rajkot", timeAgo: "1 hr 10 mins ago" },
 ];
+
 
 export function RandomEnrollmentNotification() {
   const [currentNotification, setCurrentNotification] = useState<EnrollmentNotification | null>(null);
@@ -64,7 +76,7 @@ export function RandomEnrollmentNotification() {
               <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center flex-shrink-0">
                 <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400" />
               </div>
-              
+
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
                   <p className="font-semibold text-sm text-gray-900 dark:text-white truncate">
@@ -74,11 +86,11 @@ export function RandomEnrollmentNotification() {
                     Just enrolled
                   </span>
                 </div>
-                
+
                 <p className="text-sm text-gray-700 dark:text-gray-300 mb-2 line-clamp-1">
                   {currentNotification.course}
                 </p>
-                
+
                 <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
                   <div className="flex items-center gap-1">
                     <MapPin className="w-3 h-3" />
@@ -91,7 +103,7 @@ export function RandomEnrollmentNotification() {
                 </div>
               </div>
             </div>
-            
+
             <div className="absolute bottom-0 left-0 right-0 h-1 bg-gray-200 dark:bg-gray-700 rounded-b-xl overflow-hidden">
               <motion.div
                 initial={{ width: "100%" }}

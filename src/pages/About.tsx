@@ -207,7 +207,7 @@ export default function About() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative py-24 overflow-hidden">
+      <section ref={heroRef} className="relative py-24 overflow-hidden mt-[-130px] sm:mt-[-150px]">
         <BackgroundBeams />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -258,7 +258,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="h-full"
             >
-              <GlassCard className="p-8 h-full flex flex-col">
+              <GlassCard className="p-8 h-[350px] flex flex-col">
                 <div className="w-16 h-16 bg-gradient-to-br from-accent to-chart-2 rounded-xl flex items-center justify-center mb-6">
                   <Eye className="w-8 h-8 text-white" />
                 </div>
@@ -429,81 +429,81 @@ export default function About() {
       </section>
 
       {/* Timeline Section */}
-<section ref={timelineRef} className="py-20 bg-gradient-to-b from-background to-secondary/20">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={timelineRef} className="py-20 bg-gradient-to-b from-background to-secondary/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    {/* Heading */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={timelineInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6 }}
-      className="text-center mb-16"
-    >
-      <Calendar className="w-16 h-16 text-primary mx-auto mb-6" />
-      <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-gradient bg-clip-text text-transparent from-primary to-accent">
-        Our Journey Through Time
-      </h2>
-      <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-        From humble beginnings to becoming a leading force in tech education
-      </p>
-    </motion.div>
+          {/* Heading */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={timelineInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <Calendar className="w-16 h-16 text-primary mx-auto mb-6" />
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-gradient bg-clip-text text-transparent from-primary to-accent">
+              Our Journey Through Time
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              From humble beginnings to becoming a leading force in tech education
+            </p>
+          </motion.div>
 
-    <div className="relative">
-      {/* Timeline line for desktop */}
-      <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-primary via-accent to-chart-2 h-full"></div>
+          <div className="relative">
+            {/* Timeline line for desktop */}
+            <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-primary via-accent to-chart-2 h-full"></div>
 
-      <div className="space-y-12 lg:space-y-20">
-        {timelineData.map((item, index) => {
-          const IconComponent = item.icon;
-          const isReversed = index % 2 === 0; // reverse every other card
+            <div className="space-y-12 lg:space-y-20">
+              {timelineData.map((item, index) => {
+                const IconComponent = item.icon;
+                const isReversed = index % 2 === 0; // reverse every other card
 
-          return (
-            <motion.div
-              key={item.year}
-              initial={{ opacity: 0, y: 20 }}
-              animate={timelineInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className={`relative flex flex-col lg:flex-row items-center lg:items-start ${isReversed ? 'lg:flex-row-reverse' : ''}`}
-            >
-              {/* Content Card */}
-              <div className={`lg:w-1/2 mb-6 lg:mb-0 ${isReversed ? 'lg:pr-16' : 'lg:pl-16'}`}>
-                <GlassCard className="hover:shadow-2xl transition-all duration-300 border border-white/20 hover:border-primary/50 rounded-2xl">
-                  <CardContent className="p-6">
-                    <div className="flex flex-col md:flex-row gap-4 md:gap-6">
-                      <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center flex-shrink-0`}>
-                        <IconComponent className="w-8 h-8 text-white" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
-                          <h3 className="text-2xl font-bold text-primary">{item.year}</h3>
-                          <h4 className="text-xl font-semibold text-white">{item.title}</h4>
-                        </div>
-                        <p className="text-muted-foreground mb-3 leading-relaxed">
-                          {item.description}
-                        </p>
-                        <ul className="space-y-1">
-                          {item.achievements.map((achievement, achievementIndex) => (
-                            <li key={achievementIndex} className="flex items-center text-sm text-muted-foreground">
-                              <div className="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
-                              {achievement}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                return (
+                  <motion.div
+                    key={item.year}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={timelineInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: index * 0.15 }}
+                    className={`relative flex flex-col lg:flex-row items-center lg:items-start ${isReversed ? 'lg:flex-row-reverse' : ''}`}
+                  >
+                    {/* Content Card */}
+                    <div className={`lg:w-1/2 mb-6 lg:mb-0 ${isReversed ? 'lg:pr-16' : 'lg:pl-16'}`}>
+                      <GlassCard className="hover:shadow-2xl transition-all duration-300 border border-white/20 hover:border-primary/50 rounded-2xl">
+                        <CardContent className="p-6">
+                          <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+                            <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center flex-shrink-0`}>
+                              <IconComponent className="w-8 h-8 text-white" />
+                            </div>
+                            <div className="flex-1">
+                              <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
+                                <h3 className="text-2xl font-bold text-primary">{item.year}</h3>
+                                <h4 className="text-xl font-semibold text-white">{item.title}</h4>
+                              </div>
+                              <p className="text-muted-foreground mb-3 leading-relaxed">
+                                {item.description}
+                              </p>
+                              <ul className="space-y-1">
+                                {item.achievements.map((achievement, achievementIndex) => (
+                                  <li key={achievementIndex} className="flex items-center text-sm text-muted-foreground">
+                                    <div className="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                    {achievement}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </GlassCard>
                     </div>
-                  </CardContent>
-                </GlassCard>
-              </div>
 
-              {/* Spacer for mobile */}
-              <div className="lg:w-1/2"></div>
-            </motion.div>
-          );
-        })}
-      </div>
-    </div>
-  </div>
-</section>
+                    {/* Spacer for mobile */}
+                    <div className="lg:w-1/2"></div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
 
 
 

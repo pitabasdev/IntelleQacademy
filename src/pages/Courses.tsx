@@ -107,7 +107,7 @@ export default function Courses() {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-b from-background via-background to-background/95">
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-b from-background via-background to-background/95 mt-[-130px] sm:mt-[-170px]">
         <BackgroundBeams />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">

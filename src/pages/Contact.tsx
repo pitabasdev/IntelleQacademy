@@ -55,7 +55,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <GradientBackground variant="hero" className="py-24">
+      <GradientBackground variant="hero" className="py-24 mt-[-95px] sm:mt-[-112px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

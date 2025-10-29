@@ -33,12 +33,12 @@ import {
   Palette,
   Star,
 } from "lucide-react";
-import { 
-  SiDiscord, 
-  SiLinkedin, 
-  SiWhatsapp, 
-  SiGoogle, 
-  SiAmazon, 
+import {
+  SiDiscord,
+  SiLinkedin,
+  SiWhatsapp,
+  SiGoogle,
+  SiAmazon,
   SiMeta,
   SiAdobe,
   SiOracle,
@@ -136,7 +136,8 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-gradient-to-b from-background via-background to-background">
+      <section className="relative min-h-screen mt-[-130px] sm:mt-[-200px] flex items-center pt-16 overflow-hidden bg-gradient-to-b from-background via-background to-background">
+
         <BackgroundBeams />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <motion.div
@@ -158,7 +159,7 @@ export default function Home() {
                   <GradientText>Empowering 5000+ Learners</GradientText>
                 </span>
               </motion.div>
-              
+
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Empowering Future{" "}
                 <span className="bg-gradient-to-r from-primary via-chart-2 to-chart-3 bg-clip-text text-transparent">
@@ -166,7 +167,7 @@ export default function Home() {
                 </span>{" "}
                 with Real-World Skills
               </h1>
-              
+
               <p className="text-lg md:text-xl text-muted-foreground">
                 Join IntelleQacademy — where learning meets innovation. Gain hands-on experience through live projects, expert mentorship, and startup-ready training programs.
               </p>
@@ -218,7 +219,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section ref={aboutRef} className="py-20 bg-gradient-to-b from-background to-accent/5">
+      <section ref={aboutRef} className="py-20 bg-gradient-to-b mt-[-70px] sm:mt-[-80px] from-background to-accent/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -333,7 +334,7 @@ export default function Home() {
                     return "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&q=80";
                 }
               };
-              
+
               return (
                 <motion.div
                   key={program.id}
@@ -364,13 +365,12 @@ export default function Home() {
                           {[...Array(5)].map((_, i) => (
                             <Star
                               key={i}
-                              className={`w-4 h-4 ${
-                                i < Math.floor(program.rating || 0)
+                              className={`w-4 h-4 ${i < Math.floor(program.rating || 0)
                                   ? 'fill-yellow-500 text-yellow-500'
                                   : i < (program.rating || 0)
-                                  ? 'fill-yellow-500 text-yellow-500 opacity-50'
-                                  : 'text-gray-300'
-                              }`}
+                                    ? 'fill-yellow-500 text-yellow-500 opacity-50'
+                                    : 'text-gray-300'
+                                }`}
                             />
                           ))}
                         </div>
@@ -515,7 +515,7 @@ export default function Home() {
                 animation-play-state: paused;
               }
             `}</style>
-            
+
             {/* First Row - Scrolling Left */}
             <div className="relative">
               <div className="flex animate-scroll-left" data-testid="testimonials-scroll-container">
@@ -1098,7 +1098,7 @@ export default function Home() {
           <p className="text-lg text-muted-foreground mb-12">
             Be part of a global learning network. Connect with mentors and learners worldwide, share knowledge, and grow together.
           </p>
-          
+
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <Button size="lg" variant="outline" className="gap-2" data-testid="button-join-discord">
               <SiDiscord className="w-5 h-5" />
@@ -1230,7 +1230,7 @@ export default function Home() {
 
           <div className="relative">
             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-chart-2" />
-            
+
             <div className="space-y-8">
               {timeline.map((item, index) => (
                 <motion.div
@@ -1247,7 +1247,7 @@ export default function Home() {
                       <div className="text-lg">{item.date.split(' ')[0]}</div>
                     </div>
                   </div>
-                  
+
                   <Card className="group-hover:shadow-xl transition-shadow hover-elevate">
                     <CardContent className="py-6">
                       <div className="flex items-center justify-between flex-wrap gap-4">

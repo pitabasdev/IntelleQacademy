@@ -78,7 +78,7 @@ export default function CourseDetail() {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <GradientBackground variant="hero" className="py-16">
+      <GradientBackground variant="hero" className="py-16 mt-[-95px] sm:mt-[-112px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/courses">
             <Button variant="ghost" className="mb-6 text-white hover:bg-white/10" data-testid="button-back-to-courses">
