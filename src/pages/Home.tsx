@@ -209,7 +209,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="max-w-3xl mx-auto text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed mb-12"
           >
-            Join IntelleQacademy — where learning meets innovation.
+            Join IntelleQacademy where learning meets innovation.
             Gain hands-on experience through live projects, expert mentorship, and
             startup-ready training programs designed to shape tomorrow’s leaders.
           </motion.p>
