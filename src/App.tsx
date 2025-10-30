@@ -7,12 +7,13 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Chatbot } from "@/components/Chatbot";
-import { EnrollmentPopup } from "@/components/EnrollmentPopup";
+
 import { DiscountBar } from "@/components/DiscountBar";
 import { RandomEnrollmentNotification } from "@/components/RandomEnrollmentNotification";
 import Home from "@/pages/Home";
 import Courses from "@/pages/Courses";
 import CourseDetail from "@/pages/CourseDetail";
+import AdvancedProgramDetail from "@/pages/AdvancedProgramDetail";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import GetQuote from "@/pages/GetQuote";
@@ -29,6 +30,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/courses" component={Courses} />
       <Route path="/courses/:id" component={CourseDetail} />
+      <Route path="/programs/:id" component={AdvancedProgramDetail} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/quote" component={GetQuote} />
@@ -57,7 +59,7 @@ function App() {
           <Footer />
         </div>
         <Chatbot />
-        <EnrollmentPopup />
+    
         <RandomEnrollmentNotification />
         <Toaster />
       </TooltipProvider>

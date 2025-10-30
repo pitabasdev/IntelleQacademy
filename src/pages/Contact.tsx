@@ -66,7 +66,7 @@ export default function Contact() {
               We'd Love to Hear From You
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Whether you're a learner, corporate partner, or trainer — we're here to connect.
+              Whether you're a learner, corporate partner, or trainer we're here to connect.
             </p>
           </motion.div>
         </div>

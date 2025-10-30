@@ -1,10 +1,18 @@
 "use client";
 
+import { useState } from "react";
 import { TextGenerateEffect } from "./text-generate-effect";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+ 
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { GradientBackground } from "@/components/GradientBackground";
 import { GlassCard } from "@/components/GlassCard";
 import { TrustedPartners } from "@/components/TrustedPartners";
@@ -32,10 +40,9 @@ import {
   ArrowRight,
   Sparkles,
   Code,
-
-
   Palette,
   Star,
+
 } from "lucide-react";
 import {
   SiDiscord,
@@ -67,7 +74,7 @@ import dataScienceImage from "../assets/stock_images/data_science_analyti_bfd031
 import { coursesData, testimonialsData } from "@/data/courses";
 
 export default function Home() {
-
+  const [selectedPack, setSelectedPack] = useState<any>(null);
   const [aboutRef, aboutInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [featuresRef, featuresInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const words = "Empowering Future Tech Leaders with Real-World Skills";
@@ -706,7 +713,23 @@ export default function Home() {
                 courses: "20+ Courses",
                 badge: "LIFETIME ACCESS",
                 icon: Award,
-                gradient: "from-yellow-500 to-orange-500"
+                gradient: "from-yellow-500 to-orange-500",
+                details: {
+                  description: "Get unlimited access to our complete course library with lifetime validity. Perfect for learners who want to explore multiple domains and upskill continuously.",
+                  included: [
+                    "Access to all 20+ premium courses",
+                    "Lifetime course updates and new additions",
+                    "15+ Industry certifications",
+                    "Priority support and mentorship",
+                    "Exclusive community access",
+                    "Job placement assistance",
+                    "Interview preparation workshops",
+                    "Resume building and review"
+                  ],
+                  price: "₹49,999",
+                  originalPrice: "₹1,99,999",
+                  validity: "Lifetime Access"
+                }
               },
               {
                 name: "Tech Starter",
@@ -714,7 +737,25 @@ export default function Home() {
                 courses: "12+ Tech Courses",
                 features: ["10+ Projects", "5+ Certifications", "Live Classes", "Internship"],
                 icon: Code,
-                gradient: "from-blue-500 to-cyan-500"
+                gradient: "from-blue-500 to-cyan-500",
+                details: {
+                  description: "Jumpstart your tech career with our comprehensive technology bundle covering web development, mobile apps, data science, and more.",
+                  included: [
+                    "Full Stack Web Development (MERN, MEAN)",
+                    "Python Programming & Data Science",
+                    "Mobile App Development (React Native)",
+                    "Cloud Computing (AWS, Azure)",
+                    "DevOps & CI/CD",
+                    "10+ Real-world projects",
+                    "5+ Industry certifications",
+                    "3 months internship opportunity",
+                    "Live interactive classes",
+                    "Dedicated mentor support"
+                  ],
+                  price: "₹29,999",
+                  originalPrice: "₹89,999",
+                  validity: "2 Years Access"
+                }
               },
               {
                 name: "MBA Lite",
@@ -722,7 +763,25 @@ export default function Home() {
                 courses: "7+ Business Courses",
                 features: ["10+ Projects", "5+ Certifications", "Live Classes", "Internship"],
                 icon: Briefcase,
-                gradient: "from-purple-500 to-pink-500"
+                gradient: "from-purple-500 to-pink-500",
+                details: {
+                  description: "Master essential business skills including marketing, finance, operations, and leadership to accelerate your management career.",
+                  included: [
+                    "Digital Marketing & SEO",
+                    "Business Analytics & Data Visualization",
+                    "Financial Planning & Analysis",
+                    "Product Management",
+                    "Project Management (PMP preparation)",
+                    "Strategic Management",
+                    "Entrepreneurship & Startup Fundamentals",
+                    "10+ Case studies and projects",
+                    "5+ Business certifications",
+                    "Internship with partner companies"
+                  ],
+                  price: "₹24,999",
+                  originalPrice: "₹74,999",
+                  validity: "2 Years Access"
+                }
               },
               {
                 name: "Creators Pack",
@@ -730,7 +789,25 @@ export default function Home() {
                 courses: "6+ Creator Courses",
                 features: ["3+ Projects", "6+ Certifications", "Live Classes", "Internship"],
                 icon: Palette,
-                gradient: "from-green-500 to-emerald-500"
+                gradient: "from-green-500 to-emerald-500",
+                details: {
+                  description: "Unleash your creativity with courses in UI/UX design, graphic design, video editing, content creation, and digital art.",
+                  included: [
+                    "UI/UX Design (Figma, Adobe XD)",
+                    "Graphic Design (Photoshop, Illustrator)",
+                    "Video Editing (Premiere Pro, After Effects)",
+                    "Content Writing & Copywriting",
+                    "Social Media Marketing",
+                    "Photography & Image Editing",
+                    "3+ Portfolio-worthy projects",
+                    "6+ Adobe & design certifications",
+                    "Live creative sessions",
+                    "Freelancing guidance"
+                  ],
+                  price: "₹19,999",
+                  originalPrice: "₹59,999",
+                  validity: "18 Months Access"
+                }
               }
             ].map((pack, index) => (
               <FloatingCard key={pack.name} delay={index * 0.1}>
@@ -764,7 +841,11 @@ export default function Home() {
                     ) : (
                       <div className="flex-1" />
                     )}
-                    <Button className="w-full mt-auto" data-testid={`button-${pack.name.toLowerCase().replace(/\s+/g, '-')}`}>
+                    <Button 
+                      className="w-full mt-auto" 
+                      data-testid={`button-${pack.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      onClick={() => setSelectedPack(pack)}
+                    >
                       Learn More
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
@@ -800,7 +881,33 @@ export default function Home() {
                 duration: "6 Months",
                 mentees: "20k+",
                 image: digitalMarketingImage,
-                certification: ["Google", "HubSpot"]
+                certification: ["Google", "HubSpot"],
+                details: {
+                  fullDescription: "Master the art and science of Digital Marketing with our comprehensive program. Learn to create data-driven marketing strategies, manage social media campaigns, optimize for search engines, and build effective email marketing funnels. This course prepares you for a successful career in the digital marketing industry.",
+                  curriculum: [
+                    "SEO & SEM Fundamentals",
+                    "Social Media Marketing (Facebook, Instagram, LinkedIn, Twitter)",
+                    "Google Ads & PPC Campaigns",
+                    "Email Marketing & Automation",
+                    "Content Marketing Strategy",
+                    "Analytics & Data-Driven Marketing",
+                    "Conversion Rate Optimization",
+                    "Marketing Automation Tools",
+                    "Influencer Marketing",
+                    "Brand Management"
+                  ],
+                  outcomes: [
+                    "Plan and execute comprehensive digital marketing campaigns",
+                    "Master Google Analytics and marketing analytics tools",
+                    "Create engaging content for various social media platforms",
+                    "Optimize websites for search engines (SEO)",
+                    "Run successful paid advertising campaigns",
+                    "Build and manage email marketing campaigns"
+                  ],
+                  tools: ["Google Analytics", "SEMrush", "Hootsuite", "Mailchimp", "HubSpot", "Facebook Ads Manager"],
+                  price: "₹39,999",
+                  emi: "₹3,333/month"
+                }
               },
               {
                 title: "Data Science",
@@ -809,7 +916,33 @@ export default function Home() {
                 duration: "6 Months",
                 mentees: "20k+",
                 image: dataScienceImage,
-                certification: ["IBM", "Microsoft"]
+                certification: ["IBM", "Microsoft"],
+                details: {
+                  fullDescription: "Dive deep into the world of Data Science with our industry-leading program. Learn to analyze complex datasets, build machine learning models, and create predictive analytics solutions. This comprehensive course covers everything from basic statistics to advanced deep learning techniques.",
+                  curriculum: [
+                    "Python Programming for Data Science",
+                    "Statistics & Probability",
+                    "Data Wrangling & Cleaning",
+                    "Exploratory Data Analysis (EDA)",
+                    "Machine Learning Algorithms",
+                    "Deep Learning & Neural Networks",
+                    "Natural Language Processing (NLP)",
+                    "Computer Vision",
+                    "Big Data Analytics",
+                    "Data Visualization with Tableau & Power BI"
+                  ],
+                  outcomes: [
+                    "Analyze and visualize complex datasets",
+                    "Build and deploy machine learning models",
+                    "Work with big data technologies",
+                    "Create predictive analytics solutions",
+                    "Apply statistical methods to solve business problems",
+                    "Communicate insights effectively to stakeholders"
+                  ],
+                  tools: ["Python", "R", "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy", "Tableau", "Power BI", "SQL"],
+                  price: "₹44,999",
+                  emi: "₹3,750/month"
+                }
               }
             ].map((program, index) => (
               <motion.div
@@ -861,9 +994,14 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="flex gap-3 mt-auto flex-shrink-0">
-                        <Button className="flex-1" data-testid={`button-${program.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                          View Details
-                        </Button>
+                        <Link href={`/programs/${program.title.toLowerCase().replace(/\s+/g, '-')}`} className="flex-1">
+                          <Button 
+                            className="w-full" 
+                            data-testid={`button-${program.title.toLowerCase().replace(/\s+/g, '-')}`}
+                          >
+                            View Details
+                          </Button>
+                        </Link>
                         <Button variant="outline" className="flex-1" data-testid={`button-brochure-${program.title.toLowerCase().replace(/\s+/g, '-')}`}>
                           Download Brochure
                         </Button>
@@ -1406,6 +1544,71 @@ export default function Home() {
           </motion.div>
         </div>
       </GradientBackground>
+
+      {/* Premium Value Pack Details Dialog */}
+      <Dialog open={!!selectedPack} onOpenChange={() => setSelectedPack(null)}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+          {selectedPack && (
+            <>
+              <DialogHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${selectedPack.gradient} rounded-xl flex items-center justify-center`}>
+                    <selectedPack.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <DialogTitle className="text-2xl">{selectedPack.name}</DialogTitle>
+                    <p className="text-sm text-muted-foreground">{selectedPack.subtitle}</p>
+                  </div>
+                </div>
+                {selectedPack.badge && (
+                  <Badge className={`bg-gradient-to-r ${selectedPack.gradient} text-white border-0 w-fit`}>
+                    {selectedPack.badge}
+                  </Badge>
+                )}
+              </DialogHeader>
+              
+              <div className="space-y-6 mt-4">
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">About This Pack</h3>
+                  <p className="text-muted-foreground">{selectedPack.details.description}</p>
+                </div>
+
+                <div>
+                  <h3 className="font-semibold text-lg mb-3">What's Included</h3>
+                  <div className="space-y-2">
+                    {selectedPack.details.included.map((item: string, index: number) => (
+                      <div key={index} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-muted-foreground">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="border-t pt-4">
+                  <div className="flex items-baseline gap-3 mb-2">
+                    <span className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                      {selectedPack.details.price}
+                    </span>
+                    <span className="text-lg text-muted-foreground line-through">
+                      {selectedPack.details.originalPrice}
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    <Clock className="w-4 h-4 inline mr-1" />
+                    {selectedPack.details.validity}
+                  </p>
+                  <Button className="w-full" size="lg">
+                    Enroll Now
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+
     </div>
   );
 }
