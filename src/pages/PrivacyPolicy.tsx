@@ -81,7 +81,7 @@ export default function PrivacyPolicy() {
 
   return (
     <div className="min-h-screen pt-16">
-      <GradientBackground variant="hero" className="py-16">
+      <GradientBackground variant="hero" className="py-16 mt-[-95px] sm:mt-[-110px]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

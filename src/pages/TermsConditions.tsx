@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export default function TermsConditions() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-card/30 py-20">
+    <div className="min-h-screen bg-gradient-to-b from-background to-card/30 py-20 mt-[-95px] sm:mt-[-90px]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link href="/">
           <Button variant="ghost" className="mb-8" data-testid="button-back-home">
