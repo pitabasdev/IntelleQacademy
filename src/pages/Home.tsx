@@ -1522,7 +1522,7 @@ export default function Home() {
             className="space-y-8"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white">
-              Don't just learn — build, create, and innovate with IntelleQacademy
+              Don't just learn build, create, and innovate with IntelleQacademy
             </h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
               Transform your career with industry-ready skills. Join thousands of successful alumni who started their tech journey with us.
