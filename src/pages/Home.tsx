@@ -1,3 +1,6 @@
+"use client";
+
+import { TextGenerateEffect } from "./text-generate-effect";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -5,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { GradientBackground } from "@/components/GradientBackground";
 import { GlassCard } from "@/components/GlassCard";
 import { TrustedPartners } from "@/components/TrustedPartners";
-import { BackgroundBeams } from "@/components/aceternity/BackgroundBeams";
+import { BackgroundBeams } from "./background-beams";
 import { GradientText } from "@/components/aceternity/GradientText";
 import { TextReveal } from "@/components/aceternity/TextReveal";
 import { FloatingCard } from "@/components/aceternity/FloatingCard";
@@ -63,10 +66,10 @@ import dataScienceImage from "../assets/stock_images/data_science_analyti_bfd031
 import { coursesData, testimonialsData } from "@/data/courses";
 
 export default function Home() {
-  const [heroRef, heroInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+
   const [aboutRef, aboutInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [featuresRef, featuresInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-
+  const words = "Empowering Future Tech Leaders with Real-World Skills";
   const features = [
     {
       icon: Video,
@@ -136,90 +139,179 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen mt-[-130px] sm:mt-[-200px] flex items-center pt-16 overflow-hidden bg-gradient-to-b from-background via-background to-background">
+      <section className="mt-[-130px] sm:mt-[-70px] relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-950 dark:via-blue-950 dark:to-indigo-950 pt-20">
+        {/* Background Beams */}
+        <BackgroundBeams className="absolute inset-0" />
 
-        <BackgroundBeams />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+        {/* Subtle Radial Glow */}
+        <div className="absolute inset-0 bg-gradient-radial from-transparent via-slate-50/20 to-slate-50 dark:via-slate-950/20 dark:to-slate-950"></div>
+
+        {/* Left Trust Badge */}
+        <div className="absolute top-10 left-10 z-20 hidden lg:block">
+          <div className="flex items-center gap-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-full px-4 py-2 shadow-lg border border-slate-200/20 dark:border-slate-700/30">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-sm text-slate-700 dark:text-slate-300">
+              Trusted by 5000+ Learners
+            </span>
+          </div>
+        </div>
+
+        {/* Right Trust Badge */}
+        <div className="absolute top-10 right-10 z-20 hidden lg:block">
+          <div className="flex items-center gap-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-full px-4 py-2 shadow-lg border border-slate-200/20 dark:border-slate-700/30">
+            <span className="text-sm text-slate-700 dark:text-slate-300">
+              ISO 9001 Certified
+            </span>
+            <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+              ✓
+            </div>
+          </div>
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 text-center">
+          {/* Badges Row */}
           <motion.div
-            ref={heroRef}
-            initial={{ opacity: 0, y: 30 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="grid lg:grid-cols-2 gap-12 items-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-wrap justify-center gap-4 mb-8"
           >
-            <div className="space-y-8">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-primary/20 to-accent/20 border border-primary/30 rounded-full px-5 py-2.5 backdrop-blur-sm"
+            <div className="flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-50/70 dark:bg-blue-950/50 px-4 py-2 text-sm font-medium text-blue-700 dark:text-blue-300 backdrop-blur-sm">
+              <Sparkles size={16} className="text-blue-500" />
+              Live Sessions
+            </div>
+            <div className="flex items-center gap-2 rounded-full border border-green-500/20 bg-green-50/70 dark:bg-green-950/50 px-4 py-2 text-sm font-medium text-green-700 dark:text-green-300 backdrop-blur-sm">
+              <CheckCircle2 size={16} className="text-green-500" />
+              Industry Mentors
+            </div>
+            <div className="flex items-center gap-2 rounded-full border border-purple-500/20 bg-purple-50/70 dark:bg-purple-950/50 px-4 py-2 text-sm font-medium text-purple-700 dark:text-purple-300 backdrop-blur-sm">
+              🎓 Certification
+            </div>
+            <div className="flex items-center gap-2 rounded-full border border-orange-500/20 bg-orange-50/70 dark:bg-orange-950/50 px-4 py-2 text-sm font-medium text-orange-700 dark:text-orange-300 backdrop-blur-sm">
+              💼 Placement Assistance
+            </div>
+          </motion.div>
+
+          {/* Animated Heading */}
+          <div className="mb-8">
+            <TextGenerateEffect
+              words={words}
+              className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 dark:from-slate-100 dark:via-blue-100 dark:to-indigo-100 bg-clip-text text-transparent"
+            />
+          </div>
+
+          {/* Subtext */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="max-w-3xl mx-auto text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed mb-12"
+          >
+            Join IntelleQacademy — where learning meets innovation.
+            Gain hands-on experience through live projects, expert mentorship, and
+            startup-ready training programs designed to shape tomorrow’s leaders.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="flex flex-col sm:flex-row justify-center gap-4 mb-16"
+          >
+            <Link href="/courses">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
-                <Sparkles className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium">
-                  <GradientText>Empowering 5000+ Learners</GradientText>
+                <span className="relative z-10 flex items-center gap-2">
+                  <BookOpen size={20} /> Explore Programs
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </span>
-              </motion.div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </motion.button>
+            </Link>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Empowering Future{" "}
-                <span className="bg-gradient-to-r from-primary via-chart-2 to-chart-3 bg-clip-text text-transparent">
-                  Tech Leaders
-                </span>{" "}
-                with Real-World Skills
-              </h1>
+            <Link href="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-slate-700 dark:text-slate-200 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <span className="flex items-center gap-2">
+                  <Briefcase size={20} /> Join Internship
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </span>
+              </motion.button>
+            </Link>
+          </motion.div>
 
-              <p className="text-lg md:text-xl text-muted-foreground">
-                Join IntelleQacademy — where learning meets innovation. Gain hands-on experience through live projects, expert mentorship, and startup-ready training programs.
-              </p>
-
-              <div className="flex flex-wrap gap-4">
-                <Link href="/courses">
-                  <Button size="lg" className="text-base" data-testid="button-explore-programs">
-                    <BookOpen className="w-5 h-5 mr-2" />
-                    Explore Programs
-                  </Button>
-                </Link>
-                <Link href="/contact">
-                  <Button size="lg" variant="outline" className="text-base" data-testid="button-join-internship">
-                    <Briefcase className="w-5 h-5 mr-2" />
-                    Join Internship
-                  </Button>
-                </Link>
-              </div>
-
-              <div className="flex flex-wrap gap-3">
-                {["Live Sessions", "Industry Mentors", "Certification", "Placement Assistance"].map((badge) => (
-                  <Badge key={badge} variant="secondary" className="px-4 py-2 text-sm">
-                    <CheckCircle2 className="w-4 h-4 mr-2 text-primary" />
-                    {badge}
-                  </Badge>
-                ))}
+          {/* Video Showcase */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="relative max-w-4xl mx-auto"
+          >
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+              <div className="relative bg-white/10 dark:bg-slate-900/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 dark:border-slate-700/20">
+                <div className="overflow-hidden rounded-xl shadow-2xl">
+                  <motion.video
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.3 }}
+                    src="https://res.cloudinary.com/dhe93bqbx/video/upload/v1761831223/QA_Overview_xzsycg.mp4"
+                    className="w-full aspect-video object-cover rounded-xl"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                </div>
               </div>
             </div>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={heroInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-chart-2/20 rounded-3xl blur-3xl" />
-              <div className="relative rounded-3xl shadow-2xl w-full overflow-hidden bg-black/5">
-                <iframe
-                  className="w-full aspect-video rounded-3xl"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1&modestbranding=1&rel=0"
-                  title="IntelleQacademy Training Programs"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </motion.div>
+          {/* Floating Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.3 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 max-w-5xl mx-auto"
+          >
+            {[
+              { number: "5000+", label: "Learners Empowered", sublabel: "Across India" },
+              { number: "200+", label: "Live Projects", sublabel: "Hands-on Training" },
+              { number: "50+", label: "Industry Mentors", sublabel: "Top IT Experts" },
+              { number: "100%", label: "Career Support", sublabel: "Placement Assistance" },
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                className="text-center group"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/20 dark:border-slate-700/20 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                    {stat.label}
+                  </div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">
+                    {stat.sublabel}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
 
       {/* About Section */}
-      <section ref={aboutRef} className="py-20 bg-gradient-to-b mt-[-70px] sm:mt-[-80px] from-background to-accent/5">
+      <section ref={aboutRef} className="py-20 bg-gradient-to-b mt-[-50px] sm:mt-[-34px] from-background to-accent/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -366,10 +458,10 @@ export default function Home() {
                             <Star
                               key={i}
                               className={`w-4 h-4 ${i < Math.floor(program.rating || 0)
-                                  ? 'fill-yellow-500 text-yellow-500'
-                                  : i < (program.rating || 0)
-                                    ? 'fill-yellow-500 text-yellow-500 opacity-50'
-                                    : 'text-gray-300'
+                                ? 'fill-yellow-500 text-yellow-500'
+                                : i < (program.rating || 0)
+                                  ? 'fill-yellow-500 text-yellow-500 opacity-50'
+                                  : 'text-gray-300'
                                 }`}
                             />
                           ))}
