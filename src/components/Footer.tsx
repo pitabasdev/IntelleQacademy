@@ -32,7 +32,7 @@ export function Footer() {
             <Link href="/" data-testid="link-home">
               <button className="flex items-center hover-elevate active-elevate-2 px-[-1px] py-2 rounded-md transition-all">
                 <img
-                  src="/1.png"
+                  src="/white-bg.png"
                   alt="IntelleQacademy Logo"
                   className="h-9 mb-5 pl-4 object-contain"
                 />

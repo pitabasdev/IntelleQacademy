@@ -40,7 +40,7 @@ export function Navbar() {
           <Link href="/" data-testid="link-home">
             <button className="flex items-center hover-elevate active-elevate-2 px-3 py-2 rounded-md transition-all">
               <img
-                src="/1.png"
+                src="/intelliqacademy logo.png"
                 alt="IntelleQacademy Logo"
                 className="h-8 object-contain"
               />
