@@ -26,35 +26,56 @@ export function EnrollmentModal({ isOpen, onClose, courseTitle, courseId }: Enro
     course: courseId || "",
     message: ""
   });
-
   const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    setSubmitted(true);
-    
-    toast({
-      title: "Enrollment Request Received!",
-      description: "Our team will contact you within 24 hours to complete your enrollment.",
-    });
-
-    setTimeout(() => {
-      onClose();
-      setSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        education: "",
-        course: courseId || "",
-        message: ""
-      });
-    }, 2000);
-  };
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycby7wiT8a3TmXmvjn492AWzqG7BH2P9qygtZzh_0a6GbmzBa4BY4GE9koWdfzZQwH3dc/exec", {
+        method: "POST",
+        mode: "no-cors", // prevents CORS issues
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      setSubmitted(true);
+      toast({
+        title: "Enrollment Request Received!",
+        description: "Our team will contact you within 24 hours to complete your enrollment.",
+      });
+
+      setTimeout(() => {
+        onClose();
+        setSubmitted(false);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          education: "",
+          course: courseId || "",
+          message: ""
+        });
+      }, 2000);
+
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Submission Failed",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -183,11 +204,13 @@ export function EnrollmentModal({ isOpen, onClose, courseTitle, courseId }: Enro
           </div>
 
           <div className="flex gap-3 pt-4">
-            <Button type="submit" className="flex-1" size="lg">
-              <Calendar className="w-4 h-4 mr-2" />
-              Submit Enrollment Request
+            <Button type="submit" className="flex-1" size="lg" disabled={loading}>
+              {loading ? "Submitting..." : <>
+                <Calendar className="w-4 h-4 mr-2" />
+                Submit Enrollment Request
+              </>}
             </Button>
-            <Button type="button" variant="outline" onClick={onClose} size="lg">
+            <Button type="button" variant="outline" onClick={onClose} size="lg" disabled={loading}>
               Cancel
             </Button>
           </div>
