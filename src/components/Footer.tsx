@@ -43,19 +43,19 @@ export function Footer() {
               Empowering future tech leaders with real-world skills through hands-on training and expert mentorship.
             </p>
             <div className="flex gap-3">
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" data-testid="social-linkedin">
+              <a href="https://www.linkedin.com/company/intelleqacademy/" target="_blank" rel="noopener noreferrer" data-testid="social-linkedin">
                 <button className="w-10 h-10 bg-white/10 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-all hover-elevate active-elevate-2">
                   <Linkedin className="w-5 h-5" />
                 </button>
               </a>
 
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" data-testid="social-instagram">
+              <a href="https://www.instagram.com/intelleqacademy/" target="_blank" rel="noopener noreferrer" data-testid="social-instagram">
                 <button className="w-10 h-10 bg-white/10 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-all hover-elevate active-elevate-2">
                   <Instagram className="w-5 h-5" />
                 </button>
               </a>
 
-              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" data-testid="social-youtube">
+              <a href="https://www.youtube.com/@IntelleQacademy" target="_blank" rel="noopener noreferrer" data-testid="social-youtube">
                 <button className="w-10 h-10 bg-white/10 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-all hover-elevate active-elevate-2">
                   <Youtube className="w-5 h-5" />
                 </button>
@@ -143,7 +143,7 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-start gap-3 text-sm text-white/70 group hover:text-white/90 transition-colors">
                 <MapPin className="w-4 h-4 mt-0.5 text-primary flex-shrink-0" />
-                <span>123 Tech Street, Bengaluru, Karnataka, India</span>
+                <span>Bengaluru, Karnataka, India</span>
               </div>
               <a href="mailto:support@intelleqacademy.com" className="flex items-center gap-3 text-sm text-white/70 hover:text-primary transition-colors group">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
