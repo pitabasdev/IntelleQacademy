@@ -11,9 +11,9 @@ import { FloatingCard } from "@/components/aceternity/FloatingCard";
 import { MovingBorder } from "@/components/aceternity/MovingBorder";
 import { SpotlightEffect } from "@/components/aceternity/SpotlightEffect";
 import { motion } from "framer-motion";
-import { 
+import {
 
-   Video, ArrowRight, Award, Users, BookOpen, CheckCircle2,
+  Video, ArrowRight, Award, Users, BookOpen, CheckCircle2,
   Sparkles, Target, Briefcase, GraduationCap, Star, Calendar
 } from "lucide-react";
 import { coursesData } from "@/data/courses";
@@ -56,19 +56,27 @@ export default function Courses() {
   const getCourseImage = (category: string) => {
     switch (category) {
       case "Web Development":
-        return "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80";
+        return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988621/SDE_MERN_lleyun.png";
+      case "Java Development":
+        return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988623/SDE_JAVA_ivfszt.png"
       case "Data Science":
-        return "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80";
+        return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988620/DATA_SCIENCE_ML_maonqd.png";
+       case "Data Analytics":
+        return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988616/DATA_ANALYTICS_yawhg4.png";
       case "AI":
-        return "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80";
+        return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988622/GEN_AI_xteud8.png";
+       case "Deep Learning & LLM":
+        return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988626/DEEP_LEARNING_ekldwv.png";
       case "Cyber Security":
-        return "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=800&q=80";
+        return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988616/CYBERSECURITY_yjqhuj.png";
+       case "Ethical Hacking":
+        return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988627/ETHICAL_HACKING_ljwinp.png";
       case "DevOps":
-        return "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80";
+        return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988615/CLOUD_COMPUTING_zobcb2.png";
       case "Design":
-        return "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80";
+        return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988627/UIUX_eisdpv.png";
       case "Programming":
-        return "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=80";
+        return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988619/PYTHON_DEVELOPMENT_ho69z5.png";
       default:
         return "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&q=80";
     }
@@ -140,9 +148,9 @@ export default function Courses() {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <Button 
-                  size="lg" 
-                  className="text-base group" 
+                <Button
+                  size="lg"
+                  className="text-base group"
                   data-testid="button-browse-courses"
                   onClick={() => {
                     const coursesSection = document.getElementById('courses-grid');
@@ -378,7 +386,7 @@ export default function Courses() {
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredCourses.map((course, index) => {
-               
+
                 return (
                   <motion.div
                     key={course.id}
@@ -410,13 +418,12 @@ export default function Courses() {
                               {[...Array(5)].map((_, i) => (
                                 <Star
                                   key={i}
-                                  className={`w-4 h-4 ${
-                                    i < Math.floor(course.rating || 0)
+                                  className={`w-4 h-4 ${i < Math.floor(course.rating || 0)
                                       ? 'fill-yellow-500 text-yellow-500'
                                       : i < (course.rating || 0)
-                                      ? 'fill-yellow-500 text-yellow-500 opacity-50'
-                                      : 'text-gray-300'
-                                  }`}
+                                        ? 'fill-yellow-500 text-yellow-500 opacity-50'
+                                        : 'text-gray-300'
+                                    }`}
                                 />
                               ))}
                             </div>

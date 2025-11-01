@@ -49,7 +49,7 @@ export const coursesData: CourseProgram[] = [
   {
     id: "java-fullstack",
     title: "Software Development — Java Full Stack",
-    category: "Web Development",
+    category: "Java Development",
     duration: "4 Months",
     level: "Intermediate",
     mode: "Live + Recorded",
@@ -94,7 +94,7 @@ export const coursesData: CourseProgram[] = [
   {
     id: "data-analytics",
     title: "Data Analytics",
-    category: "Data Science",
+    category: "Data Analytics",
     duration: "4 Months",
     level: "Beginner",
     mode: "Live + Recorded",
@@ -274,7 +274,7 @@ export const coursesData: CourseProgram[] = [
   {
     id: "ethical-hacking",
     title: "Ethical Hacking",
-    category: "Cyber Security",
+    category: "Ethical Hacking",
     duration: "4 Months",
     level: "Advanced",
     mode: "Live + Recorded",
@@ -458,7 +458,7 @@ export const coursesData: CourseProgram[] = [
   {
     id: "deep-learning-llm",
     title: "Deep Learning & LLM",
-    category: "AI",
+    category: "Deep Learning & LLM",
     duration: "4 Months",
     level: "Advanced",
     mode: "Live + Recorded",

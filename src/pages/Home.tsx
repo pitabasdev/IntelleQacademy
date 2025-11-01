@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import {
   Dialog,
   DialogContent,
- 
+
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
@@ -417,19 +417,19 @@ export default function Home() {
               const getCourseImage = (category: string) => {
                 switch (category) {
                   case "Web Development":
-                    return "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80";
+                    return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988621/SDE_MERN_lleyun.png";
+                  case "Java Development":
+                    return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988623/SDE_JAVA_ivfszt.png"
                   case "Data Science":
-                    return "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80";
-                  case "AI":
-                    return "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80";
+                    return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988620/DATA_SCIENCE_ML_maonqd.png";
+                  case "Data Analytics":
+                    return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988616/DATA_ANALYTICS_yawhg4.png";
+
                   case "Cyber Security":
-                    return "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=800&q=80";
-                  case "DevOps":
-                    return "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80";
-                  case "Design":
-                    return "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80";
+                    return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988616/CYBERSECURITY_yjqhuj.png";
+
                   case "Programming":
-                    return "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=80";
+                    return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988619/PYTHON_DEVELOPMENT_ho69z5.png";
                   default:
                     return "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&q=80";
                 }
@@ -841,8 +841,8 @@ export default function Home() {
                     ) : (
                       <div className="flex-1" />
                     )}
-                    <Button 
-                      className="w-full mt-auto" 
+                    <Button
+                      className="w-full mt-auto"
                       data-testid={`button-${pack.name.toLowerCase().replace(/\s+/g, '-')}`}
                       onClick={() => setSelectedPack(pack)}
                     >
@@ -995,8 +995,8 @@ export default function Home() {
                       </div>
                       <div className="flex gap-3 mt-auto flex-shrink-0">
                         <Link href={`/programs/${program.title.toLowerCase().replace(/\s+/g, '-')}`} className="flex-1">
-                          <Button 
-                            className="w-full" 
+                          <Button
+                            className="w-full"
                             data-testid={`button-${program.title.toLowerCase().replace(/\s+/g, '-')}`}
                           >
                             View Details
@@ -1566,7 +1566,7 @@ export default function Home() {
                   </Badge>
                 )}
               </DialogHeader>
-              
+
               <div className="space-y-6 mt-4">
                 <div>
                   <h3 className="font-semibold text-lg mb-2">About This Pack</h3>
