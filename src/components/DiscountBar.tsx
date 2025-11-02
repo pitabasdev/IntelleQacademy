@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Sparkles, Clock, Gift } from "lucide-react";
+import { useDiscountBar } from "@/context/DiscountBarContext";
 
 const discountMessages = [
   { icon: Sparkles, text: "🎉 Limited Time: Get 50% OFF on all courses! Use code: SAVE50", color: "from-purple-600 to-pink-600" },
@@ -11,7 +12,7 @@ const discountMessages = [
 ];
 
 export function DiscountBar() {
-  const [isVisible, setIsVisible] = useState(true);
+  const { isVisible, setIsVisible } = useDiscountBar();
   const [currentMessage, setCurrentMessage] = useState(0);
 
   useEffect(() => {
@@ -24,7 +25,7 @@ export function DiscountBar() {
   // Adjust body margin dynamically to avoid empty space when bar hides
   useEffect(() => {
     if (isVisible) {
-      document.body.style.marginTop = "48px"; // matches bar height
+      document.body.style.marginTop = "67px"; // matches bar height
     } else {
       document.body.style.marginTop = "0px";
     }

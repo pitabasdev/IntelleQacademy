@@ -7,9 +7,10 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Chatbot } from "@/components/Chatbot";
-
 import { DiscountBar } from "@/components/DiscountBar";
 import { RandomEnrollmentNotification } from "@/components/RandomEnrollmentNotification";
+import { CookieConsent } from "@/components/CookieConsent";
+import { DiscountBarProvider } from "@/context/DiscountBarContext";
 import Home from "@/pages/Home";
 import Courses from "@/pages/Courses";
 import CourseDetail from "@/pages/CourseDetail";
@@ -49,19 +50,21 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <ScrollToTop />
-        <div className="flex flex-col min-h-screen overflow-x-hidden">
-          <DiscountBar />
-          <Navbar />
-          <main className="flex-1 overflow-x-hidden pt-[108px]">
-            <Router />
-          </main>
-          <Footer />
-        </div>
-        <Chatbot />
-    
-        <RandomEnrollmentNotification />
-        <Toaster />
+        <DiscountBarProvider>
+          <ScrollToTop />
+          <div className="flex flex-col min-h-screen overflow-x-hidden">
+            <DiscountBar />
+            <Navbar />
+            <main className="flex-1 overflow-x-hidden pt-[108px]">
+              <Router />
+            </main>
+            <Footer />
+          </div>
+          <Chatbot />
+          <RandomEnrollmentNotification />
+          <CookieConsent />
+          <Toaster />
+        </DiscountBarProvider>
       </TooltipProvider>
     </QueryClientProvider>
   );
