@@ -126,23 +126,40 @@ export default function CourseDetail() {
               </div>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative group cursor-pointer"
-            >
-              <img
-                src={courseVideoThumb}
-                alt="Course preview"
-                className="rounded-2xl shadow-2xl w-full"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/30 rounded-2xl group-hover:bg-black/40 transition-colors">
-                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Play className="w-8 h-8 text-white ml-1" />
-                </div>
-              </div>
-            </motion.div>
+<motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+  className="relative"
+>
+  {course.videoUrl ? (
+    <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video">
+      <video
+        src={`${course.videoUrl}?autoplay=true&loop=true&muted=true&controls=false`}
+        className="w-full h-full rounded-2xl object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+      ></video>
+    </div>
+  ) : (
+    <div className="relative group cursor-pointer">
+      <img
+        src={courseVideoThumb}
+        alt="Course preview"
+        className="rounded-2xl shadow-2xl w-full"
+      />
+      <div className="absolute inset-0 flex items-center justify-center bg-black/30 rounded-2xl group-hover:bg-black/40 transition-colors">
+        <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+          <Play className="w-8 h-8 text-white ml-1" />
+        </div>
+      </div>
+    </div>
+  )}
+</motion.div>
+
+
           </motion.div>
         </div>
       </GradientBackground>

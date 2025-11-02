@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams, Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { EnrollmentModal } from "@/components/EnrollmentModal";
 import {
   ArrowRight,
   Clock,
@@ -275,6 +277,7 @@ const advancedPrograms = {
 export default function AdvancedProgramDetail() {
   const { id } = useParams();
   const program = advancedPrograms[id as keyof typeof advancedPrograms];
+  const [isEnrollModalOpen, setIsEnrollModalOpen] = useState(false);
 
   if (!program) {
     return (
@@ -642,7 +645,11 @@ export default function AdvancedProgramDetail() {
                     </div>
                   </div>
 
-                  <Button className="w-full" size="lg">
+                  <Button 
+                    className="w-full" 
+                    size="lg"
+                    onClick={() => setIsEnrollModalOpen(true)}
+                  >
                     Enroll Now
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
@@ -664,6 +671,14 @@ export default function AdvancedProgramDetail() {
           </div>
         </div>
       </div>
+
+      {/* Enrollment Modal */}
+      <EnrollmentModal
+        isOpen={isEnrollModalOpen}
+        onClose={() => setIsEnrollModalOpen(false)}
+        courseTitle={program.title}
+        courseId={id}
+      />
     </div>
   );
 }

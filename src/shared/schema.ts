@@ -71,6 +71,7 @@ export interface CourseProgram {
   price?: number;
   originalPrice?: number;
   weeklyPlan?: WeekPlan[];
+  videoUrl?: string;
 }
 
 // Testimonial Interface

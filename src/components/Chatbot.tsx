@@ -125,7 +125,7 @@ export function Chatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-24 right-4 md:right-8 z-50 w-[90vw] md:w-96"
+            className="fixed bottom-24 right-4 md:right-8 z-50 w-[85vw] md:w-80"
           >
             <Card className="shadow-2xl border-primary/20">
               <CardHeader className="bg-gradient-to-r from-primary to-accent text-white pb-4">
@@ -155,7 +155,7 @@ export function Chatbot() {
               </CardHeader>
               
               <CardContent className="p-0">
-                <div className="h-96 overflow-y-auto p-4 space-y-4 bg-accent/5">
+                <div className="h-80 overflow-y-auto p-4 space-y-4 bg-accent/5">
                   {messages.map((message) => (
                     <div
                       key={message.id}

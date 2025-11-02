@@ -14,6 +14,7 @@ export const coursesData: CourseProgram[] = [
     mentees: "13k+",
     price: 14999,
     originalPrice: 29999,
+    videoUrl: "https://res.cloudinary.com/dhe93bqbx/video/upload/v1762084662/Software-Development-MERN-Stack.pdf_kb4tvl.mp4",
     syllabus: [
       "HTML, CSS, JavaScript ES6+ Fundamentals",
       "React.js, Hooks & State Management (Redux)",
@@ -59,6 +60,7 @@ export const coursesData: CourseProgram[] = [
     mentees: "10k+",
     price: 15999,
     originalPrice: 31999,
+    videoUrl: "https://res.cloudinary.com/dhe93bqbx/video/upload/v1762084684/Java-Full-Stack-Development-Program.pdf_Presentation_hzrmhu.mp4",
     syllabus: [
       "Java Fundamentals & OOP Concepts",
       "Spring Framework & Spring Boot",
@@ -104,6 +106,7 @@ export const coursesData: CourseProgram[] = [
     mentees: "12k+",
     price: 12999,
     originalPrice: 24999,
+    videoUrl: "https://res.cloudinary.com/dhe93bqbx/video/upload/v1762084686/Data-Analytics-Mastery-Program.pdf_i1m56y.mp4",
     syllabus: [
       "Excel for Data Analysis (Advanced)",
       "SQL & Database Querying",
@@ -149,6 +152,7 @@ export const coursesData: CourseProgram[] = [
     mentees: "15k+",
     price: 16999,
     originalPrice: 33999,
+    videoUrl: "https://res.cloudinary.com/dhe93bqbx/video/upload/v1762084673/Data-Science-and-Machine-Learning.pdf_nv2dit.mp4",
     syllabus: [
       "Python for Data Science & Statistics",
       "NumPy, Pandas & Advanced Data Analysis",
@@ -194,6 +198,7 @@ export const coursesData: CourseProgram[] = [
     mentees: "14k+",
     price: 9999,
     originalPrice: 19999,
+    videoUrl: "https://res.cloudinary.com/dhe93bqbx/video/upload/v1762084655/Python-Development-Your-Gateway-to-a-Thriving-Tech-Career.pdf_Presentation_g1vuyz.mp4",
     syllabus: [
       "Python Fundamentals & Syntax",
       "Data Structures & Algorithms in Python",
@@ -239,6 +244,7 @@ export const coursesData: CourseProgram[] = [
     mentees: "12k+",
     price: 13999,
     originalPrice: 27999,
+    videoUrl: "https://res.cloudinary.com/dhe93bqbx/video/upload/v1762084673/Master-Cybersecurity-Your-Path-to-Industry-Ready-Expertise.pdf_mqli48.mp4",
     syllabus: [
       "Cybersecurity Fundamentals & CIA Triad",
       "Network Security & Protocols",
@@ -284,6 +290,7 @@ export const coursesData: CourseProgram[] = [
     mentees: "8k+",
     price: 15499,
     originalPrice: 30999,
+    videoUrl: "https://res.cloudinary.com/dhe93bqbx/video/upload/v1762090798/Become-a-Certified-Ethical-Hacker.pdf_pf33ot.mp4",
     syllabus: [
       "Ethical Hacking Fundamentals & Methodology",
       "Footprinting & Reconnaissance",
@@ -328,6 +335,7 @@ export const coursesData: CourseProgram[] = [
     rating: 4.5,
     mentees: "11k+",
     price: 14499,
+    videoUrl: "https://res.cloudinary.com/dhe93bqbx/video/upload/v1762090782/Master-Cloud-Computing-with-AWS.pdf_d0lujg.mp4",
     originalPrice: 28999,
     syllabus: [
       "Cloud Computing Fundamentals",
@@ -373,6 +381,7 @@ export const coursesData: CourseProgram[] = [
     rating: 5.0,
     mentees: "9k+",
     price: 11999,
+     videoUrl: "https://res.cloudinary.com/dhe93bqbx/video/upload/v1762083752/UIUX-Design-Professional-Training-Program.pdf_esitxv.mp4",
     originalPrice: 23999,
     syllabus: [
       "Design Thinking & User Research Methods",
@@ -420,6 +429,7 @@ export const coursesData: CourseProgram[] = [
     rating: 5.0,
     mentees: "7k+",
     price: 16499,
+    videoUrl:"https://res.cloudinary.com/dhe93bqbx/video/upload/v1762090814/Generative-AI-Professional-Certificate-Program.pdf_nxdxgt.mp4",
     originalPrice: 32999,
     syllabus: [
       "Generative AI Fundamentals & Evolution",
@@ -467,6 +477,7 @@ export const coursesData: CourseProgram[] = [
     rating: 5.0,
     mentees: "6k+",
     price: 17999,
+    videoUrl:"https://res.cloudinary.com/dhe93bqbx/video/upload/v1762090818/Deep-Learning-and-Large-Language-Models.pdf_dobkxu.mp4",
     originalPrice: 35999,
     syllabus: [
       "Deep Learning Fundamentals & Math",

@@ -216,8 +216,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-2">Email</h3>
-                    <a href="mailto:info@intelleqacademy.in" className="text-primary hover:underline">
-                      info@intelleqacademy.in
+                    <a href="mailto:info@intelleqacademy.com" className="text-primary hover:underline">
+                      info@intelleqacademy.com
                     </a>
                   </div>
                 </CardContent>
