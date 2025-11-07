@@ -42,7 +42,7 @@ import {
   Code,
   Palette,
   Star,
-
+  Monitor, XCircle
 } from "lucide-react";
 import {
   SiDiscord,
@@ -64,6 +64,128 @@ import {
   SiTesla
 } from "react-icons/si";
 
+
+import {
+
+  Download,
+
+  Globe,
+
+  Zap,
+  Shield,
+  HeartHandshake
+} from "lucide-react";
+
+const benefitsData = [
+  {
+    icon: Award,
+    title: "Industry-Recognized Certification",
+    description: "Get certified with credentials valued by top employers worldwide",
+    features: [
+      "Globally recognized certificates",
+      "Digital badge for LinkedIn",
+      "Verification portal for employers",
+      "Lifetime certificate access"
+    ],
+    highlight: "100% Valid Certificates"
+  },
+  {
+    icon: Users,
+    title: "1:1 Mentorship Sessions",
+    description: "Personalized guidance from industry experts working in top companies",
+    features: [
+      "Weekly 1:1 sessions",
+      "Career guidance",
+      "Project reviews",
+      "Interview preparation"
+    ],
+    highlight: "Expert Mentors"
+  },
+  {
+    icon: Briefcase,
+    title: "100% Placement Support",
+    description: "Comprehensive career services to land your dream job",
+    features: [
+      "Resume building",
+      "Mock interviews",
+      "100+ hiring partners",
+      "Job referral system"
+    ],
+    highlight: "Guaranteed Support"
+  },
+  {
+    icon: Clock,
+    title: "Lifetime Course Access",
+    description: "Learn at your own pace with lifetime access to all course materials",
+    features: [
+      "Lifetime video access",
+      "Updated content",
+      "Community access",
+      "Future updates included"
+    ],
+    highlight: "Never Expires"
+  },
+  {
+    icon: Globe,
+    title: "Global Learning Community",
+    description: "Join thousands of learners from around the world",
+    features: [
+      "Active Discord community",
+      "Peer learning",
+      "Networking events",
+      "Collaborative projects"
+    ],
+    highlight: "10,000+ Members"
+  },
+  {
+    icon: Star,
+    title: "Hands-on Projects",
+    description: "Build real-world projects that showcase your skills to employers",
+    features: [
+      "Industry projects",
+      "Live case studies",
+      "Portfolio building",
+      "GitHub integration"
+    ],
+    highlight: "Real Experience"
+  },
+  {
+    icon: Zap,
+    title: "Flexible Learning Schedule",
+    description: "Balance your learning with work and personal commitments",
+    features: [
+      "Live + recorded sessions",
+      "Weekend batches",
+      "Self-paced options",
+      "24/7 access"
+    ],
+    highlight: "Learn Anywhere"
+  },
+  {
+    icon: Shield,
+    title: "Money-Back Guarantee",
+    description: "Risk-free learning with our satisfaction guarantee",
+    features: [
+      "7-day refund policy",
+      "Free trial sessions",
+      "Course previews",
+      "No questions asked"
+    ],
+    highlight: "Risk Free"
+  },
+  {
+    icon: HeartHandshake,
+    title: "Lifetime Career Support",
+    description: "Continuous support even after course completion",
+    features: [
+      "Career counseling",
+      "Job updates",
+      "Skill upgrades",
+      "Alumni network"
+    ],
+    highlight: "Always Supported"
+  }
+];
 import trainingImage from "../assets/generated_images/Training_classroom_session_ff5cebfc.png";
 import mentorImage from "../assets/generated_images/Professional_tech_mentor_portrait_13a36820.png";
 import alumniImage from "../assets/generated_images/Alumni_success_portrait_cda91d31.png";
@@ -113,27 +235,83 @@ export default function Home() {
 
   const programs = coursesData.slice(0, 6);
 
+  // Add these imports at the top
+  const proPackItems = [
+    "Placement Assistance",
+    "Mockup Interviews",
+    "Value Packs",
+    "1:1 Mentorship",
+    "Industry Projects",
+    "Lifetime Access",
+    "Certification",
+    "Resume Building",
+    "Career Guidance",
+    "Live Sessions",
+    "Recorded Videos",
+    "Doubt Support",
+    "Community Access",
+    "Job Referrals",
+    "Portfolio Review",
+    "Interview Preparation",
+    "Soft Skills Training",
+    "Technical Workshops"
+  ];
+
+  // Update your comparison data structure
   const comparisonData = [
     {
-      program: "MERN Stack",
-      duration: "3 Months",
-      mode: "Live + Recorded",
+      program: "Full Stack Development",
+      description: "Master frontend and backend technologies",
+      duration: "12",
+      mode: "Online Live",
       certification: true,
-      internship: true
+      internship: true,
+      placement: true
     },
     {
-      program: "Data Science",
-      duration: "3 Months",
-      mode: "Live + Recorded",
+      program: "Data Science & Analytics",
+      description: "Become a data-driven decision maker",
+      duration: "16",
+      mode: "Online Live",
       certification: true,
-      internship: true
+      internship: true,
+      placement: true
+    },
+    {
+      program: "Java Development",
+      description: "Enterprise-level Java applications",
+      duration: "10",
+      mode: "Online Live",
+      certification: true,
+      internship: true,
+      placement: true
+    },
+    {
+      program: "Python Development",
+      description: "Versatile programming for multiple domains",
+      duration: "8",
+      mode: "Online Live",
+      certification: true,
+      internship: false,
+      placement: true
     },
     {
       program: "Cyber Security",
-      duration: "3 Months",
-      mode: "Live",
+      description: "Protect systems from cyber threats",
+      duration: "14",
+      mode: "Online Live",
       certification: true,
-      internship: true
+      internship: true,
+      placement: true
+    },
+    {
+      program: "UI/UX Design",
+      description: "Create beautiful and functional designs",
+      duration: "10",
+      mode: "Online Live",
+      certification: true,
+      internship: false,
+      placement: true
     }
   ];
 
@@ -270,7 +448,7 @@ export default function Home() {
                   <motion.video
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.3 }}
-                    src="https://res.cloudinary.com/dhe93bqbx/video/upload/v1761831223/QA_Overview_xzsycg.mp4"
+                    src="https://res.cloudinary.com/dhe93bqbx/video/upload/v1762259624/QA_Overview_sxljml.mp4"
                     className="w-full aspect-video object-cover rounded-xl"
                     autoPlay
                     muted
@@ -401,7 +579,77 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="py-16 bg-gradient-to-r from-primary/5 to-accent/5 border-y border-border/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+              Pro Packs
+            </h2>
+            <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
+              Exclusive benefits and features included in all our training programs
+            </p>
+          </div>
 
+          {/* Marquee Container */}
+          <div className="relative overflow-hidden">
+            {/* Gradient Overlays */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+
+            {/* Infinite Marquee */}
+            <div className="flex space-x-6">
+              {/* First Marquee */}
+              <div className="flex space-x-6 animate-marquee whitespace-nowrap">
+                {proPackItems.map((item, index) => (
+                  <div
+                    key={`first-${index}`}
+                    className="inline-flex items-center px-6 py-4 bg-white dark:bg-card border border-border rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group cursor-pointer"
+                  >
+                    <div className="w-3 h-3 rounded-full bg-primary mr-3 group-hover:scale-125 transition-transform duration-300" />
+                    <span className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Duplicate for seamless loop */}
+              <div className="flex space-x-6 animate-marquee2 whitespace-nowrap">
+                {proPackItems.map((item, index) => (
+                  <div
+                    key={`second-${index}`}
+                    className="inline-flex items-center px-6 py-4 bg-white dark:bg-card border border-border rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group cursor-pointer"
+                  >
+                    <div className="w-3 h-3 rounded-full bg-accent mr-3 group-hover:scale-125 transition-transform duration-300" />
+                    <span className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Additional Info */}
+          <div className="text-center mt-12">
+            <div className="inline-flex items-center gap-6 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <span>Included in All Programs</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                <span>Lifetime Access</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span>24/7 Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Popular Programs */}
       <section className="py-20 bg-gradient-to-b from-accent/5 to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1106,59 +1354,374 @@ export default function Home() {
       </section>
 
       {/* Program Comparison Table */}
-      <section className="py-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Program Comparison</h2>
-            <p className="text-lg text-muted-foreground">
-              Compare our top training programs
+      <section className="py-20 bg-gradient-to-b from-background to-accent/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Compare Programs</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+              Program Comparison
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Find the perfect training program that matches your career goals and learning preferences
             </p>
           </div>
 
-          <Card>
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="bg-accent/50">
-                  <tr>
-                    <th className="px-6 py-4 text-left font-semibold">Program</th>
-                    <th className="px-6 py-4 text-left font-semibold">Duration</th>
-                    <th className="px-6 py-4 text-left font-semibold">Mode</th>
-                    <th className="px-6 py-4 text-center font-semibold">Certification</th>
-                    <th className="px-6 py-4 text-center font-semibold">Internship</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonData.map((row, index) => (
-                    <tr
-                      key={row.program}
-                      className={`border-t hover-elevate ${index % 2 === 0 ? 'bg-accent/10' : ''}`}
-                    >
-                      <td className="px-6 py-4 font-medium">{row.program}</td>
-                      <td className="px-6 py-4">{row.duration}</td>
-                      <td className="px-6 py-4">{row.mode}</td>
-                      <td className="px-6 py-4 text-center">
-                        {row.certification ? (
-                          <CheckCircle2 className="w-5 h-5 text-primary inline" />
-                        ) : (
-                          <span className="text-muted-foreground">-</span>
-                        )}
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        {row.internship ? (
-                          <CheckCircle2 className="w-5 h-5 text-primary inline" />
-                        ) : (
-                          <span className="text-muted-foreground">-</span>
-                        )}
-                      </td>
+          {/* Desktop Table View */}
+          <div className="hidden lg:block">
+            <Card className="border-none shadow-2xl shadow-primary/5 backdrop-blur-sm bg-card/50">
+              <div className="overflow-hidden rounded-2xl">
+                <table className="w-full">
+                  <thead>
+                    <tr className="bg-gradient-to-r from-primary to-accent text-white">
+                      <th className="px-8 py-6 text-left font-bold text-lg">
+                        <div className="flex items-center gap-3">
+                          <BookOpen className="w-5 h-5" />
+                          Program Features
+                        </div>
+                      </th>
+                      <th className="px-8 py-6 text-center font-bold text-lg">Duration</th>
+                      <th className="px-8 py-6 text-center font-bold text-lg">Learning Mode</th>
+                      <th className="px-8 py-6 text-center font-bold text-lg">
+                        <div className="flex items-center justify-center gap-2">
+                          <Award className="w-5 h-5" />
+                          Certification
+                        </div>
+                      </th>
+                      <th className="px-8 py-6 text-center font-bold text-lg">
+                        <div className="flex items-center justify-center gap-2">
+                          <Briefcase className="w-5 h-5" />
+                          Internship
+                        </div>
+                      </th>
+                      <th className="px-8 py-6 text-center font-bold text-lg">Placement Support</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-border/50">
+                    {comparisonData.map((row, index) => (
+                      <tr
+                        key={row.program}
+                        className={`group transition-all duration-300 hover:bg-primary/5 ${index % 2 === 0 ? 'bg-accent/5' : 'bg-background'
+                          }`}
+                      >
+                        <td className="px-8 py-6">
+                          <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-lg">
+                              {row.program.charAt(0)}
+                            </div>
+                            <div>
+                              <h3 className="font-bold text-lg text-foreground group-hover:text-primary transition-colors">
+                                {row.program}
+                              </h3>
+                              <p className="text-sm text-muted-foreground mt-1">{row.description}</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td className="px-8 py-6 text-center">
+                          <div className="flex flex-col items-center">
+                            <span className="font-semibold text-foreground text-lg">{row.duration}</span>
+                            <span className="text-xs text-muted-foreground mt-1">Weeks</span>
+                          </div>
+                        </td>
+                        <td className="px-8 py-6 text-center">
+                          <Badge
+                            variant={row.mode === 'Online Live' ? 'default' : 'secondary'}
+                            className="text-sm px-3 py-1"
+                          >
+                            {row.mode}
+                          </Badge>
+                        </td>
+                        <td className="px-8 py-6 text-center">
+                          {row.certification ? (
+                            <div className="flex justify-center">
+                              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                                <CheckCircle2 className="w-5 h-5 text-green-600" />
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="flex justify-center">
+                              <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
+                                <XCircle className="w-5 h-5 text-red-600" />
+                              </div>
+                            </div>
+                          )}
+                        </td>
+                        <td className="px-8 py-6 text-center">
+                          {row.internship ? (
+                            <div className="flex flex-col items-center gap-1">
+                              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                                <CheckCircle2 className="w-5 h-5 text-green-600" />
+                              </div>
+                              <span className="text-xs text-muted-foreground">Included</span>
+                            </div>
+                          ) : (
+                            <div className="flex flex-col items-center gap-1">
+                              <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
+                                <XCircle className="w-5 h-5 text-red-600" />
+                              </div>
+                              <span className="text-xs text-muted-foreground">Not Included</span>
+                            </div>
+                          )}
+                        </td>
+                        <td className="px-8 py-6 text-center">
+                          <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                            Guaranteed
+                          </Badge>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </Card>
+          </div>
+
+          {/* Mobile Cards View */}
+          <div className="lg:hidden space-y-6">
+            {comparisonData.map((row,) => (
+              <Card
+                key={row.program}
+                className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] bg-card/50 backdrop-blur-sm"
+              >
+                <CardContent className="p-6">
+                  {/* Header */}
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-xl">
+                      {row.program.charAt(0)}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-xl text-foreground">{row.program}</h3>
+                      <p className="text-sm text-muted-foreground mt-1">{row.description}</p>
+                    </div>
+                  </div>
+
+                  {/* Features Grid */}
+                  <div className="grid grid-cols-2 gap-4 mt-6">
+                    <div className="text-center p-3 bg-accent/10 rounded-lg">
+                      <Clock className="w-5 h-5 text-primary mx-auto mb-2" />
+                      <p className="text-sm text-muted-foreground">Duration</p>
+                      <p className="font-semibold text-foreground">{row.duration}</p>
+                    </div>
+
+                    <div className="text-center p-3 bg-accent/10 rounded-lg">
+                      <Monitor className="w-5 h-5 text-primary mx-auto mb-2" />
+                      <p className="text-sm text-muted-foreground">Mode</p>
+                      <p className="font-semibold text-foreground">{row.mode}</p>
+                    </div>
+
+                    <div className="text-center p-3 bg-accent/10 rounded-lg">
+                      <Award className="w-5 h-5 text-primary mx-auto mb-2" />
+                      <p className="text-sm text-muted-foreground">Certification</p>
+                      {row.certification ? (
+                        <CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" />
+                      ) : (
+                        <XCircle className="w-5 h-5 text-red-600 mx-auto" />
+                      )}
+                    </div>
+
+                    <div className="text-center p-3 bg-accent/10 rounded-lg">
+                      <Briefcase className="w-5 h-5 text-primary mx-auto mb-2" />
+                      <p className="text-sm text-muted-foreground">Internship</p>
+                      {row.internship ? (
+                        <CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" />
+                      ) : (
+                        <XCircle className="w-5 h-5 text-red-600 mx-auto" />
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Action Button */}
+                  <div className="mt-6 pt-4 border-t border-border/50">
+
+
+                    <Link href="/courses">
+                      <Button className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white cursor-pointer">
+                        <BookOpen className="w-4 h-4 mr-2" />
+                        View Details
+                      </Button>
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Additional Info */}
+          <div className="text-center mt-12">
+            <div className="inline-flex flex-wrap gap-4 justify-center">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 border border-green-200">
+                <CheckCircle2 className="w-4 h-4 text-green-600" />
+                <span className="text-sm font-medium text-green-700">100% Placement Support</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200">
+                <Users className="w-4 h-4 text-blue-600" />
+                <span className="text-sm font-medium text-blue-700">1:1 Mentorship</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 border border-purple-200">
+                <Clock className="w-4 h-4 text-purple-600" />
+                <span className="text-sm font-medium text-purple-700">Lifetime Access</span>
+              </div>
             </div>
-          </Card>
+          </div>
         </div>
       </section>
 
+      <section className="py-20 bg-gradient-to-br from-background via-accent/5 to-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Why Choose Us</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+              Program Benefits & Perks
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Discover the exclusive advantages that make our training programs stand out
+            </p>
+          </div>
+
+          {/* Horizontal Auto-Scrolling Container */}
+          <div className="relative">
+            {/* Gradient Overlays */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+
+            {/* Auto-scrolling wrapper */}
+            <div className="overflow-hidden">
+              <motion.div
+                className="flex gap-6 py-4"
+                animate={{
+                  x: [0, -1600], // Adjust based on total width of cards
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 40, // Slower duration for better readability
+                    ease: "linear",
+                  },
+                }}
+              >
+                {/* First set of cards */}
+                {benefitsData.map((benefit, ) => (
+                  <div
+                    key={`first-${benefit.title}`}
+                    className="flex-none w-80"
+                  >
+                    <Card className="h-full border-none shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-gradient-to-br from-card to-card/80 backdrop-blur-sm group">
+                      <CardContent className="p-8 h-full flex flex-col">
+                        {/* Icon */}
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                          <benefit.icon className="w-8 h-8 text-white" />
+                        </div>
+
+                        {/* Title */}
+                        <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+                          {benefit.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-muted-foreground mb-6 flex-1 leading-relaxed">
+                          {benefit.description}
+                        </p>
+
+                        {/* Features List */}
+                        <ul className="space-y-3 mb-6">
+                          {benefit.features.map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-center gap-3 text-sm">
+                              <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                              <span className="text-foreground">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+
+                        {/* Highlight Badge */}
+                        <div className="mt-auto">
+                          <Badge
+                            variant="secondary"
+                            className="bg-primary/10 text-primary border-primary/20"
+                          >
+                            {benefit.highlight}
+                          </Badge>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
+
+                {/* Duplicate set for seamless loop */}
+                {benefitsData.map((benefit, ) => (
+                  <div
+                    key={`second-${benefit.title}`}
+                    className="flex-none w-80"
+                  >
+                    <Card className="h-full border-none shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-gradient-to-br from-card to-card/80 backdrop-blur-sm group">
+                      <CardContent className="p-8 h-full flex flex-col">
+                        {/* Icon */}
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent to-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                          <benefit.icon className="w-8 h-8 text-white" />
+                        </div>
+
+                        {/* Title */}
+                        <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
+                          {benefit.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-muted-foreground mb-6 flex-1 leading-relaxed">
+                          {benefit.description}
+                        </p>
+
+                        {/* Features List */}
+                        <ul className="space-y-3 mb-6">
+                          {benefit.features.map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-center gap-3 text-sm">
+                              <div className="w-2 h-2 rounded-full bg-accent flex-shrink-0" />
+                              <span className="text-foreground">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+
+                        {/* Highlight Badge */}
+                        <div className="mt-auto">
+                          <Badge
+                            variant="secondary"
+                            className="bg-accent/10 text-accent border-accent/20"
+                          >
+                            {benefit.highlight}
+                          </Badge>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center mt-16">
+            <div className="inline-flex flex-col sm:flex-row gap-4 items-center">
+           <Link href="/courses">
+  <Button
+    size="lg"
+    className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-8 py-3 text-lg cursor-pointer"
+  >
+    <BookOpen className="w-5 h-5 mr-2" />
+    Explore All Programs
+  </Button>
+</Link>
+              <Button variant="outline" size="lg" className="px-8 py-3 text-lg">
+                <Download className="w-5 h-5 mr-2" />
+                Download Brochure
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Learning Journey */}
       <section className="py-20 bg-gradient-to-b from-background to-card/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1338,14 +1901,40 @@ export default function Home() {
               <SiDiscord className="w-5 h-5" />
               Join Discord Community
             </Button>
-            <Button size="lg" variant="outline" className="gap-2" data-testid="button-connect-linkedin">
-              <SiLinkedin className="w-5 h-5" />
-              Connect on LinkedIn
+            <Button
+              size="lg"
+              variant="outline"
+              className="gap-2"
+              data-testid="button-connect-linkedin"
+              asChild
+            >
+              <a
+                href="https://www.linkedin.com/company/intelleqacademy/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SiLinkedin className="w-5 h-5" />
+                Connect on LinkedIn
+              </a>
             </Button>
-            <Button size="lg" variant="outline" className="gap-2" data-testid="button-whatsapp-group">
-              <SiWhatsapp className="w-5 h-5" />
-              WhatsApp Group
+
+            <Button
+              size="lg"
+              variant="outline"
+              className="gap-2"
+              data-testid="button-whatsapp-group"
+              asChild
+            >
+              <a
+                href="https://wa.me/918217668872?text=Hello%20Intelleq%20Academy%20👋%20I%20would%20like%20to%20join%20the%20WhatsApp%20group%20for%20latest%20updates%20and%20announcements."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SiWhatsapp className="w-5 h-5" />
+                WhatsApp Group
+              </a>
             </Button>
+
           </div>
         </div>
       </section>

@@ -149,9 +149,9 @@ export function Footer() {
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
                 <span>support@intelleqacademy.com</span>
               </a>
-              <a href="tel:+18001234567" className="flex items-center gap-3 text-sm text-white/70 hover:text-primary transition-colors group">
+              <a href="tel:+918217668872" className="flex items-center gap-3 text-sm text-white/70 hover:text-primary transition-colors group">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                <span>+1 (800) 123-4567</span>
+                <span>+91 8217668872</span>
               </a>
             </div>
           </div>

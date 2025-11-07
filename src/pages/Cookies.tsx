@@ -25,7 +25,7 @@ export default function Cookies() {
         
         <TextReveal delay={0.2}>
           <p className="text-center text-muted-foreground mb-12">
-            Last updated: October 27, 2025
+            Last updated: December 27, 2024
           </p>
         </TextReveal>
 
@@ -228,10 +228,16 @@ export default function Cookies() {
               </p>
               <div className="space-y-2 mt-3">
                 <p className="font-semibold text-foreground">
-                  Email: privacy@intelleqacademy.com
+                  Email: support@intelleqacademy.com
                 </p>
                 <p className="font-semibold text-foreground">
-                  Phone: +1 (800) 123-4567
+                  Phone: +91 8217668872
+                </p>
+                <p className="font-semibold text-foreground">
+                  WhatsApp: +91 8217668872
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Support Hours: Monday - Sunday, 9:00 AM - 9:00 PM (IST)
                 </p>
               </div>
             </CardContent>

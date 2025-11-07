@@ -230,8 +230,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-2">Phone</h3>
-                    <a href="tel:+919876543210" className="text-primary hover:underline">
-                      +91 9876543210
+                    <a href="tel:+91 8217668872" className="text-primary hover:underline">
+                      +91 8217668872
                     </a>
                   </div>
                 </CardContent>
