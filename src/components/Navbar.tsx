@@ -29,11 +29,11 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed ${discountBarVisible ? 'top-[44px]' : 'top-0'}  left-0 right-0 z-50 transition-all duration-300
+      className={`fixed ${discountBarVisible ? 'top-[44px]' : 'top-0'} pt-4 left-0 right-0 z-50 transition-all duration-300
     ${scrolled
           ? "bg-background/95 backdrop-blur-lg border-b border-border shadow-sm"
           : "bg-transparent"}
-    pt-4 md:pt-0
+    pt-1 md:pt-0
   `}
       style={{ marginTop: 0 }}
     >

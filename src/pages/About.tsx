@@ -15,6 +15,7 @@ import {
   Lightbulb,
   Briefcase,
   Star,
+  Cpu,
   Heart,
   Zap,
   Shield,
@@ -145,56 +146,80 @@ export default function About() {
     }
   ];
 
-  const timelineData = [
-    {
-      year: "2018",
-      title: "Foundation",
-      description: "IntelleQacademy was born with a vision to revolutionize tech education",
-      icon: Target,
-      achievements: ["First batch of 50 students", "Core curriculum developed", "Industry expert instructors onboarded"],
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      year: "2019",
-      title: "Growth",
-      description: "Expanded course offerings and established industry partnerships",
-      icon: TrendingUp,
-      achievements: ["10+ specialized courses", "500+ students trained", "First corporate partnerships"],
-      color: "from-green-500 to-emerald-500"
-    },
-    {
-      year: "2020",
-      title: "Innovation",
-      description: "Pioneered online learning with AI-powered personalized education",
-      icon: Rocket,
-      achievements: ["AI learning platform launch", "Remote learning infrastructure", "1000+ active students"],
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      year: "2021",
-      title: "Expansion",
-      description: "Global reach with students from 25+ countries and new international offices",
-      icon: Globe,
-      achievements: ["International expansion", "25+ countries served", "Multilingual course offerings"],
-      color: "from-orange-500 to-red-500"
-    },
-    {
-      year: "2022",
-      title: "Excellence",
-      description: "Achieved industry recognition and highest student satisfaction rates",
-      icon: Award,
-      achievements: ["Industry awards won", "95% placement rate", "4.8/5 student rating"],
-      color: "from-yellow-500 to-amber-500"
-    },
-    {
-      year: "2023",
-      title: "Transformation",
-      description: "Became a leading force in tech education with 5000+ successful graduates",
-      icon: GraduationCap,
-      achievements: ["5000+ graduates", "150+ corporate clients", "20+ expert trainers"],
-      color: "from-indigo-500 to-purple-500"
-    }
-  ];
+ const timelineData = [
+  {
+    year: "2020",
+    title: "Beginning of Excellence",
+    description: "Started professional and career-oriented tech training programs, fully managed and delivered independently",
+    icon: Rocket,
+    achievements: [
+      "Launched first job-oriented training batches",
+      "Strong focus on practical & industry-aligned learning",
+      "Early success with highly positive outcomes"
+    ],
+    color: "from-blue-500 to-cyan-500"
+  },
+  {
+    year: "2021",
+    title: "Industry-Ready Training",
+    description: "Introduced specialized upskilling programs for IT professionals and freshers entering the workforce",
+    icon: TrendingUp,
+    achievements: [
+      "Advanced curriculums introduced",
+      "Collaborated with working professionals",
+      "Major boost in placement-focused training"
+    ],
+    color: "from-green-500 to-emerald-500"
+  },
+  {
+    year: "2022",
+    title: "Corporate Engagement",
+    description: "Delivered professional on-job training for corporate teams with tailored modules across technologies",
+    icon: Award,
+    achievements: [
+      "Corporate-level training programs executed",
+      "Expanded industry network across India",
+      "Specialized domain-based projects introduced"
+    ],
+    color: "from-purple-500 to-pink-500"
+  },
+  {
+    year: "2023",
+    title: "National Expansion & Recognition",
+    description: "Recognized as a trusted brand for career-oriented tech education across multiple states in India",
+    icon: Globe,
+    achievements: [
+      "Training footprint across India",
+      "Strong student success & placement stories",
+      "Collaborations with top tech experts"
+    ],
+    color: "from-orange-500 to-red-500"
+  },
+  {
+    year: "2024",
+    title: "AI-Powered Learning",
+    description: "Integrated AI-based tools, personalized mentoring, and real-time industry projects into the learning system",
+    icon: Cpu,
+    achievements: [
+      "AI-enabled learning experiences",
+      "Project-based training with industry standards",
+      "Enhanced global-level curriculum"
+    ],
+    color: "from-yellow-500 to-amber-500"
+  },
+  {
+    year: "2025",
+    title: "Global Reach & Career Success",
+    description: "Providing cross-border tech programs with corporate upskilling solutions and growing international presence",
+    icon: GraduationCap,
+    achievements: [
+      "International training operations established",
+      "Work-ready professionals trained globally",
+      "Trusted by learners & organizations worldwide"
+    ],
+    color: "from-indigo-500 to-purple-500"
+  }
+];
 
   const teamValues = [
     "Passionate educators committed to student success",

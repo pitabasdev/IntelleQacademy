@@ -1705,7 +1705,7 @@ export default function Home() {
           {/* CTA Section */}
           <div className="text-center mt-16">
             <div className="inline-flex flex-col sm:flex-row gap-4 items-center">
-           <Link href="/courses">
+              <Link href="/courses">
   <Button
     size="lg"
     className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-8 py-3 text-lg cursor-pointer"
