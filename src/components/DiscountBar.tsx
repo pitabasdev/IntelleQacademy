@@ -11,7 +11,7 @@ const discountMessages = [
   },
   { 
     icon: Gift, 
-    text: "🎁 SPECIAL: Enroll now and get FREE certification + Placement Assistance worth ₹15,000!", 
+    text: "🎁 SPECIAL: Enroll now and get FREE certification + Placement Assistance!", 
     color: "from-blue-600 to-cyan-600" 
   },
   { 
