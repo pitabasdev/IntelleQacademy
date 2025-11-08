@@ -50,7 +50,7 @@ export default function PrivacyPolicy() {
         "Opt-Out: Unsubscribe from marketing emails using the link in any promotional message.",
         "Data Portability: Request your data in a machine-readable format.",
         "Withdraw Consent: Opt out of non-essential data processing activities.",
-        "Contact: Email privacy@intelleqacademy.com to exercise any of these rights."
+        "Contact: Email support@intelleqacademy.com to exercise any of these rights."
       ]
     },
     {
@@ -94,7 +94,7 @@ export default function PrivacyPolicy() {
               Your privacy is important to us. This policy explains how we collect, use, and protect your personal information.
             </p>
             <p className="text-sm text-white/70">
-              Last Updated: November 2024
+              Last Updated: December 2024
             </p>
           </motion.div>
         </div>
@@ -146,19 +146,32 @@ export default function PrivacyPolicy() {
             <Card className="border-primary/20 bg-primary/5">
               <CardContent className="pt-6">
                 <h3 className="text-xl font-bold mb-4">Contact Information</h3>
-                <div className="space-y-2 text-muted-foreground">
+                <div className="space-y-3 text-muted-foreground">
                   <p>
                     If you have any questions or concerns about this privacy policy, please contact us:
                   </p>
-                  <p className="font-semibold text-foreground">
-                    Email: privacy@intelleqacademy.com
-                  </p>
-                  <p className="font-semibold text-foreground">
-                    Phone: +1 (800) 123-4567
-                  </p>
-                  <p className="font-semibold text-foreground">
-                    Address: 123 Education Street, Tech Valley, CA 94000
-                  </p>
+                  <div className="space-y-2 mt-4">
+                    <p className="font-semibold text-foreground">
+                      Email: support@intelleqacademy.com
+                    </p>
+                    <p className="font-semibold text-foreground">
+                      Phone: +91 8217668872
+                    </p>
+                    <p className="font-semibold text-foreground">
+                      WhatsApp: +91 8217668872
+                    </p>
+                    <p className="font-semibold text-foreground">
+                      Address: Bengaluru, Karnataka, India
+                    </p>
+                    <p className="font-semibold text-foreground">
+                      Website: https://intelleqacademy.com/
+                    </p>
+                  </div>
+                  <div className="mt-4 p-4 bg-accent/10 rounded-lg">
+                    <p className="text-sm">
+                      <strong>Support Hours:</strong> Monday - Sunday, 9:00 AM - 9:00 PM (IST)
+                    </p>
+                  </div>
                   <p className="text-sm mt-4">
                     We reserve the right to update this privacy policy at any time. Changes will be posted on this page with an updated revision date.
                   </p>

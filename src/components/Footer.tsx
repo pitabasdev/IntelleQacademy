@@ -84,14 +84,7 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link href="/career">
-                  <button className="text-white/70 hover:text-primary transition-colors text-sm flex items-center gap-2 group w-full text-left" data-testid="footer-link-career">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors"></span>
-                    Career
-                  </button>
-                </Link>
-              </li>
+
             </ul>
           </div>
 

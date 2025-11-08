@@ -702,7 +702,7 @@ export default function Courses() {
                   Join thousands of successful learners who transformed their careers with IntelleQacademy. Get personalized guidance from our advisors.
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center pt-4">
-                  <Link href="/get-quote">
+                  <Link href="/quote">
                     <Button size="lg" className="text-base" data-testid="button-get-quote">
                       Get a Free Quote
                       <ArrowRight className="w-5 h-5 ml-2" />

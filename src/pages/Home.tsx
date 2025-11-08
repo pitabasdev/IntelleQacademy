@@ -427,7 +427,7 @@ export default function Home() {
                 className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-slate-700 dark:text-slate-200 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <span className="flex items-center gap-2">
-                  <Briefcase size={20} /> Join Internship
+                  <Briefcase size={20} /> Join Cohort
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </motion.button>
@@ -1606,7 +1606,7 @@ export default function Home() {
                 }}
               >
                 {/* First set of cards */}
-                {benefitsData.map((benefit, ) => (
+                {benefitsData.map((benefit,) => (
                   <div
                     key={`first-${benefit.title}`}
                     className="flex-none w-80"
@@ -1653,7 +1653,7 @@ export default function Home() {
                 ))}
 
                 {/* Duplicate set for seamless loop */}
-                {benefitsData.map((benefit, ) => (
+                {benefitsData.map((benefit,) => (
                   <div
                     key={`second-${benefit.title}`}
                     className="flex-none w-80"
@@ -1706,14 +1706,14 @@ export default function Home() {
           <div className="text-center mt-16">
             <div className="inline-flex flex-col sm:flex-row gap-4 items-center">
               <Link href="/courses">
-  <Button
-    size="lg"
-    className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-8 py-3 text-lg cursor-pointer"
-  >
-    <BookOpen className="w-5 h-5 mr-2" />
-    Explore All Programs
-  </Button>
-</Link>
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-8 py-3 text-lg cursor-pointer"
+                >
+                  <BookOpen className="w-5 h-5 mr-2" />
+                  Explore All Programs
+                </Button>
+              </Link>
               <Button variant="outline" size="lg" className="px-8 py-3 text-lg">
                 <Download className="w-5 h-5 mr-2" />
                 Download Brochure

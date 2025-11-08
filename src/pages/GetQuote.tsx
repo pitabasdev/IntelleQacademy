@@ -16,12 +16,18 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertQuoteRequestSchema, type InsertQuoteRequest } from "../shared/schema";
 import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
+import emailjs from '@emailjs/browser';
 import corporateImage from "../assets/generated_images/Corporate_training_meeting_fd7949ee.png";
+
+// EmailJS Configuration - Replace with your actual credentials
+const EMAILJS_SERVICE_ID = 'service_y4sek53';
+const EMAILJS_TEMPLATE_ID = 'template_y6obtoi';
+const EMAILJS_PUBLIC_KEY = '3cElEiu64Ct3C6ckt';
 
 export default function GetQuote() {
   const { toast } = useToast();
   const [isEnrollModalOpen, setIsEnrollModalOpen] = useState(false);
+  
   const form = useForm<InsertQuoteRequest>({
     resolver: zodResolver(insertQuoteRequestSchema),
     defaultValues: {
@@ -37,19 +43,55 @@ export default function GetQuote() {
 
   const quoteMutation = useMutation({
     mutationFn: async (data: InsertQuoteRequest) => {
-      return await apiRequest("POST", "/api/quote", data);
+      // Prepare template parameters for EmailJS with all details
+      const templateParams = {
+        to_email: 'pitabas.pradhan834@gmail.com',
+        subject: `New Corporate Training Quote Request from ${data.organizationName}`,
+        
+        // Organization Details
+        organization_name: data.organizationName,
+        contact_person: data.contactPersonName,
+        email: data.email,
+        phone: data.phone,
+        
+        // Training Details
+        training_domain: data.trainingDomain,
+        participants: data.participants,
+        message: data.message,
+        
+        // Additional info for email formatting
+        date: new Date().toLocaleDateString('en-US', { 
+          weekday: 'long', 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        }),
+        time: new Date().toLocaleTimeString('en-US', {
+          hour: '2-digit',
+          minute: '2-digit'
+        })
+      };
+
+      // Send email using EmailJS
+      return await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
     },
     onSuccess: () => {
       toast({
-        title: "Quote Request Submitted!",
+        title: "Quote Request Submitted Successfully!",
         description: "Thank you for your interest. Our team will contact you within 24 hours with a custom quote.",
       });
       form.reset();
     },
     onError: (error: any) => {
+      console.error('Email submission error:', error);
       toast({
-        title: "Error",
-        description: error.message || "Failed to submit quote request. Please try again.",
+        title: "Submission Error",
+        description: error.text || "Failed to submit quote request. Please try again or contact us directly at intelle.qacademy@gmail.com",
         variant: "destructive",
       });
     },
@@ -133,7 +175,7 @@ export default function GetQuote() {
               <CardHeader>
                 <CardTitle className="text-2xl">Request a Custom Quote</CardTitle>
                 <CardDescription>
-                  Fill out the form below and our team will get back to you within 24 hours
+                  Fill out the form below and our team will get back to you within 24 hours with a detailed proposal
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -144,9 +186,14 @@ export default function GetQuote() {
                       name="organizationName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Organization Name</FormLabel>
+                          <FormLabel>Organization Name *</FormLabel>
                           <FormControl>
-                            <Input placeholder="Acme Corporation" {...field} data-testid="input-organization-name" />
+                            <Input 
+                              placeholder="Acme Corporation" 
+                              {...field} 
+                              data-testid="input-organization-name" 
+                              required
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -159,9 +206,14 @@ export default function GetQuote() {
                         name="contactPersonName"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Contact Person Name</FormLabel>
+                            <FormLabel>Contact Person Name *</FormLabel>
                             <FormControl>
-                              <Input placeholder="John Doe" {...field} data-testid="input-contact-person" />
+                              <Input 
+                                placeholder="John Doe" 
+                                {...field} 
+                                data-testid="input-contact-person" 
+                                required
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -173,9 +225,15 @@ export default function GetQuote() {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Email</FormLabel>
+                            <FormLabel>Email Address *</FormLabel>
                             <FormControl>
-                              <Input type="email" placeholder="john@acme.com" {...field} data-testid="input-email" />
+                              <Input 
+                                type="email" 
+                                placeholder="john@acme.com" 
+                                {...field} 
+                                data-testid="input-email" 
+                                required
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -189,9 +247,14 @@ export default function GetQuote() {
                         name="phone"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Phone Number</FormLabel>
+                            <FormLabel>Phone Number *</FormLabel>
                             <FormControl>
-                              <Input placeholder="+91 9876543210" {...field} data-testid="input-phone" />
+                              <Input 
+                                placeholder="+91 9876543210" 
+                                {...field} 
+                                data-testid="input-phone" 
+                                required
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -203,11 +266,11 @@ export default function GetQuote() {
                         name="trainingDomain"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Training Domain</FormLabel>
+                            <FormLabel>Training Domain *</FormLabel>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                               <FormControl>
                                 <SelectTrigger data-testid="select-training-domain">
-                                  <SelectValue placeholder="Select domain" />
+                                  <SelectValue placeholder="Select training domain" />
                                 </SelectTrigger>
                               </FormControl>
                               <SelectContent>
@@ -232,14 +295,16 @@ export default function GetQuote() {
                       name="participants"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Number of Participants</FormLabel>
+                          <FormLabel>Number of Participants *</FormLabel>
                           <FormControl>
                             <Input
                               type="number"
                               placeholder="25"
+                              min="1"
                               {...field}
                               onChange={(e) => field.onChange(parseInt(e.target.value) || 0)}
                               data-testid="input-participants"
+                              required
                             />
                           </FormControl>
                           <FormMessage />
@@ -252,13 +317,14 @@ export default function GetQuote() {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Message / Requirements</FormLabel>
+                          <FormLabel>Training Requirements & Goals *</FormLabel>
                           <FormControl>
                             <Textarea
-                              placeholder="Tell us about your training requirements, goals, and any specific technologies you'd like to cover..."
+                              placeholder="Tell us about your training requirements, specific goals, timeline, technologies you'd like to cover, and any other relevant details..."
                               className="min-h-[150px]"
                               {...field}
                               data-testid="input-message"
+                              required
                             />
                           </FormControl>
                           <FormMessage />
@@ -266,19 +332,29 @@ export default function GetQuote() {
                       )}
                     />
 
-                    <Button type="submit" size="lg" className="w-full" disabled={quoteMutation.isPending} data-testid="button-request-quote">
+                    <Button 
+                      type="submit" 
+                      size="lg" 
+                      className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90" 
+                      disabled={quoteMutation.isPending} 
+                      data-testid="button-request-quote"
+                    >
                       {quoteMutation.isPending ? (
                         <>
                           <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                          Submitting...
+                          Submitting Your Request...
                         </>
                       ) : (
                         <>
                           <Briefcase className="w-5 h-5 mr-2" />
-                          Request Quote
+                          Get Custom Quote
                         </>
                       )}
                     </Button>
+                    
+                    <p className="text-sm text-muted-foreground text-center">
+                      We'll prepare a detailed proposal including pricing, timeline, and curriculum based on your requirements.
+                    </p>
                   </form>
                 </Form>
               </CardContent>
@@ -590,7 +666,6 @@ export default function GetQuote() {
               Schedule a Call
             </Button>
           </a>
-
         </div>
       </section>
 
