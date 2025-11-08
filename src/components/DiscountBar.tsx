@@ -1,24 +1,94 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Sparkles, Clock, Gift } from "lucide-react";
+import { Sparkles, Clock, Gift, Star, Award, Zap, TrendingUp, Rocket, Crown, Target } from "lucide-react";
 import { useDiscountBar } from "@/context/DiscountBarContext";
 
 const discountMessages = [
-  { icon: Sparkles, text: "🎉 Limited Time: Get 50% OFF on all courses! Use code: SAVE50", color: "from-purple-600 to-pink-600" },
-  { icon: Gift, text: "🎁 Special Offer: Enroll now and get FREE certification worth ₹5,000!", color: "from-blue-600 to-cyan-600" },
-  { icon: Clock, text: "⏰ Flash Sale: Early bird discount ending in 24 hours - Save up to ₹15,000!", color: "from-orange-600 to-red-600" },
-  { icon: Sparkles, text: "✨ New Year Special: First 100 students get 60% discount + FREE internship!", color: "from-green-600 to-emerald-600" },
-  { icon: Gift, text: "🔥 Hot Deal: Get 3 months of mentorship absolutely FREE with any course!", color: "from-indigo-600 to-purple-600" },
+  { 
+    icon: Sparkles, 
+    text: "🎉 FLASH SALE: Get 60% OFF on all courses! Use code: INTEL60", 
+    color: "from-purple-600 to-pink-600" 
+  },
+  { 
+    icon: Gift, 
+    text: "🎁 SPECIAL: Enroll now and get FREE certification + Placement Assistance worth ₹15,000!", 
+    color: "from-blue-600 to-cyan-600" 
+  },
+  { 
+    icon: Clock, 
+    text: "⏰ LIMITED TIME: Early bird discount ending soon - Save up to ₹20,000!", 
+    color: "from-orange-600 to-red-600" 
+  },
+  { 
+    icon: Star, 
+    text: "✨ NEW YEAR OFFER: First 50 students get 70% discount + FREE 3-month internship!", 
+    color: "from-green-600 to-emerald-600" 
+  },
+  { 
+    icon: Award, 
+    text: "🏆 EXCLUSIVE: Get 6 months of career mentorship FREE with any premium course!", 
+    color: "from-indigo-600 to-purple-600" 
+  },
+  { 
+    icon: Zap, 
+    text: "⚡ HOT DEAL: Buy 1 course, get 1 FREE for your friend! Limited spots available!", 
+    color: "from-yellow-600 to-orange-600" 
+  },
+  { 
+    icon: TrendingUp, 
+    text: "📈 CAREER BOOST: Enroll in Data Science & AI program and get 100% job guarantee!", 
+    color: "from-teal-600 to-blue-600" 
+  },
+  { 
+    icon: Rocket, 
+    text: "🚀 LAUNCH OFFER: Full Stack Development with MERN - Now at 65% discountv!", 
+    color: "from-red-600 to-pink-600" 
+  },
+  { 
+    icon: Crown, 
+    text: "👑 PREMIUM: Cybersecurity Masterclass with 75% OFF + FREE ethical hacking toolkit!", 
+    color: "from-amber-600 to-yellow-600" 
+  },
+  { 
+    icon: Target, 
+    text: "🎯 SMART DEAL: UI/UX Design course with 55% OFF + FREE Figma Pro subscription!", 
+    color: "from-violet-600 to-purple-600" 
+  },
+  { 
+    icon: Sparkles, 
+    text: "💫 WEEKEND SPECIAL: All courses at 50% OFF + Extra 10% with code WEEKEND10", 
+    color: "from-rose-600 to-pink-600" 
+  },
+  { 
+    icon: Gift, 
+    text: "🎊 FESTIVE OFFER: Diwali Special - Get 2 courses for the price of 1! Limited period!", 
+    color: "from-sky-600 to-blue-600" 
+  },
+  { 
+    icon: Clock, 
+    text: "🔥 LAST CHANCE: Cyber Monday Deal - 80% OFF on all certifications + Lifetime access!", 
+    color: "from-fuchsia-600 to-purple-600" 
+  },
+  { 
+    icon: Star, 
+    text: "⭐ STUDENT SPECIAL: Extra 25% OFF on already discounted courses!", 
+    color: "from-lime-600 to-green-600" 
+  },
+  { 
+    icon: Award, 
+    text: "🏅 CORPORATE OFFER: Team training packages starting at 70% OFF!", 
+    color: "from-cyan-600 to-teal-600" 
+  },
 ];
 
 export function DiscountBar() {
-  const { isVisible, setIsVisible } = useDiscountBar();
+  const { isVisible } = useDiscountBar();
   const [currentMessage, setCurrentMessage] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentMessage((prev) => (prev + 1) % discountMessages.length);
-    }, 5000);
+    }, 4000); // Reduced interval for faster rotation with more messages
     return () => clearInterval(interval);
   }, []);
 
@@ -47,9 +117,13 @@ export function DiscountBar() {
           animate={{ height: "auto", opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed top-0 left-0 right-0 z-[60] overflow-hidden"
+          className="fixed top-0 left-0 right-0 z-[60] overflow-hidden cursor-pointer"
+          onClick={() => {
+            // Optional: Add click behavior to redirect to courses page
+            window.location.href = '/courses';
+          }}
         >
-          <div className={`bg-gradient-to-r ${message.color} text-white py-2.5 px-4 relative`}>
+          <div className={`bg-gradient-to-r ${message.color} text-white py-2.5 px-4 relative group hover:opacity-95 transition-opacity`}>
             <div className="max-w-7xl mx-auto flex items-center justify-center gap-3">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -64,20 +138,32 @@ export function DiscountBar() {
                   <span className="text-sm sm:text-base font-semibold text-center">
                     {message.text}
                   </span>
+                  <div className="hidden sm:flex items-center gap-1 ml-2">
+                    <span className="text-xs bg-white/20 px-2 py-1 rounded-full animate-bounce">
+                      Click to claim offer →
+                    </span>
+                  </div>
                 </motion.div>
               </AnimatePresence>
             </div>
 
-            <button
-              onClick={() => setIsVisible(false)}
-              className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
-              aria-label="Close announcement"
-            >
-              <X className="w-4 h-4" />
-            </button>
+            {/* Progress bar for message transition */}
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/30">
+              <motion.div
+                key={currentMessage}
+                initial={{ width: "0%" }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 4, ease: "linear" }}
+                className="h-full bg-white/70"
+              />
+            </div>
+
+            {/* Hover effect indicator */}
+            <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-all duration-300" />
           </div>
 
-          <div className="h-0.5 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"></div>
+          {/* Shimmer effect line */}
+          <div className="h-0.5 bg-gradient-to-r from-transparent via-white to-transparent opacity-40 animate-pulse"></div>
         </motion.div>
       )}
     </AnimatePresence>

@@ -12,6 +12,10 @@ import { MovingBorder } from "@/components/aceternity/MovingBorder";
 import { SpotlightEffect } from "@/components/aceternity/SpotlightEffect";
 import { motion } from "framer-motion";
 import {
+ 
+  QrCode, Shield, Globe, TrendingUp, Eye, ExternalLink // Add these new icons
+} from "lucide-react";
+import {
 
   Video, ArrowRight, Award, Users, BookOpen, CheckCircle2,
   Sparkles, Target, Briefcase, GraduationCap, Star, Calendar
@@ -61,15 +65,15 @@ export default function Courses() {
         return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988623/SDE_JAVA_ivfszt.png"
       case "Data Science":
         return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988620/DATA_SCIENCE_ML_maonqd.png";
-       case "Data Analytics":
+      case "Data Analytics":
         return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988616/DATA_ANALYTICS_yawhg4.png";
       case "AI":
         return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988622/GEN_AI_xteud8.png";
-       case "Deep Learning & LLM":
+      case "Deep Learning & LLM":
         return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988626/DEEP_LEARNING_ekldwv.png";
       case "Cyber Security":
         return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988616/CYBERSECURITY_yjqhuj.png";
-       case "Ethical Hacking":
+      case "Ethical Hacking":
         return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988627/ETHICAL_HACKING_ljwinp.png";
       case "DevOps":
         return "https://res.cloudinary.com/dhe93bqbx/image/upload/v1761988615/CLOUD_COMPUTING_zobcb2.png";
@@ -419,10 +423,10 @@ export default function Courses() {
                                 <Star
                                   key={i}
                                   className={`w-4 h-4 ${i < Math.floor(course.rating || 0)
-                                      ? 'fill-yellow-500 text-yellow-500'
-                                      : i < (course.rating || 0)
-                                        ? 'fill-yellow-500 text-yellow-500 opacity-50'
-                                        : 'text-gray-300'
+                                    ? 'fill-yellow-500 text-yellow-500'
+                                    : i < (course.rating || 0)
+                                      ? 'fill-yellow-500 text-yellow-500 opacity-50'
+                                      : 'text-gray-300'
                                     }`}
                                 />
                               ))}
@@ -539,7 +543,266 @@ export default function Courses() {
           </div>
         </div>
       </section>
+      {/* Demo Certificate Section */}
+{/* Demo Certificate Section */}
+<section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-primary/5 via-accent/5 to-chart-2/5">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <TextReveal>
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 md:mb-4">
+        Earn Industry-Recognized <GradientText>Certificates</GradientText>
+      </h2>
+    </TextReveal>
+    <TextReveal delay={0.2}>
+      <p className="text-center text-muted-foreground text-base sm:text-lg md:text-lg mb-8 md:mb-12 max-w-3xl mx-auto px-4">
+        Get certified with credentials that employers trust. Our certificates validate your skills and boost your career prospects.
+      </p>
+    </TextReveal>
 
+    <div className="grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
+      {/* Certificate Preview */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="relative order-2 lg:order-1"
+      >
+        <div className="relative bg-white dark:bg-gray-900 rounded-xl md:rounded-2xl shadow-xl md:shadow-2xl overflow-hidden border border-primary/20 md:border-2 hover:shadow-2xl md:hover:shadow-3xl transition-all duration-300 cursor-pointer group"
+             onClick={() => window.open('https://res.cloudinary.com/dhe93bqbx/image/upload/v1762614386/DEMO_xwkhv3.png', '_blank')}>
+          
+          {/* Certificate Image */}
+          <div className="w-full h-auto">
+            <img 
+              src="https://res.cloudinary.com/dhe93bqbx/image/upload/v1762614386/DEMO_xwkhv3.png" 
+              alt="Demo Certificate of Completion"
+              className="w-full h-auto object-contain"
+            />
+          </div>
+
+          {/* Hover Overlay */}
+          <div className="absolute inset-0 bg-primary/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl md:rounded-2xl">
+            <div className="text-center text-white p-4 md:p-6">
+              <Eye className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 mx-auto mb-2 md:mb-4" />
+              <p className="text-base md:text-lg font-semibold mb-1 md:mb-2">View Demo Certificate</p>
+              <p className="text-xs md:text-sm opacity-90">Click to see the full certificate</p>
+              <Button variant="outline" size="sm" className="mt-2 md:mt-4 text-white border-white hover:bg-white/20 text-xs md:text-sm">
+                <ExternalLink className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
+                View Full Size
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Decorative Elements */}
+        <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 bg-gradient-to-r from-primary to-accent rounded-full opacity-20"></div>
+        <div className="absolute -bottom-2 -left-2 md:-bottom-4 md:-left-4 w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12 bg-gradient-to-r from-accent to-chart-2 rounded-full opacity-20"></div>
+        
+        {/* Verified Badge */}
+        <div className="absolute -top-1 -right-1 md:-top-2 md:-right-2 lg:-top-3 lg:-right-3 bg-green-500 text-white px-2 py-0.5 md:px-3 md:py-1 rounded-full text-xs font-semibold flex items-center gap-1 shadow-lg">
+          <CheckCircle2 className="w-2 h-2 md:w-3 md:h-3" />
+          Demo
+        </div>
+
+        {/* Demo Link */}
+        <div className="text-center mt-3 md:mt-4">
+          <Button 
+           
+            size="sm"
+            className="text-primary hover:text-primary/80 text-xs md:text-sm"
+            onClick={() => window.open('https://res.cloudinary.com/dhe93bqbx/image/upload/v1762614386/DEMO_xwkhv3.png', '_blank')}
+          >
+            <ExternalLink className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
+            View Full Certificate
+          </Button>
+        </div>
+      </motion.div>
+
+      {/* Certificate Features */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="space-y-4 md:space-y-6 order-1 lg:order-2"
+      >
+        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">
+          Why Our Certificates <GradientText>Stand Out</GradientText>
+        </h3>
+        <p className="text-base md:text-lg text-muted-foreground">
+          Receive professional certificates upon course completion that showcase your expertise to employers worldwide.
+        </p>
+
+        <div className="space-y-3 md:space-y-4">
+          {[
+            {
+              icon: Shield,
+              title: "Industry Recognized",
+              description: "Accepted by top companies and hiring managers worldwide"
+            },
+            {
+              icon: QrCode,
+              title: "Digital Verification",
+              description: "Unique verification system to validate certificate authenticity"
+            },
+            {
+              icon: Globe,
+              title: "Global Validity",
+              description: "Recognized internationally across all industries and sectors"
+            },
+            {
+              icon: TrendingUp,
+              title: "Career Impact",
+              description: "Graduates report higher interview callbacks with certification"
+            },
+            {
+              icon: Users,
+              title: "Professional Credibility",
+              description: "Enhance your LinkedIn profile and digital portfolios"
+            },
+            {
+              icon: Award,
+              title: "Skill Validation",
+              description: "Proof of your expertise and completion of rigorous training"
+            }
+          ].map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-card/50 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-300"
+            >
+              <div className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <feature.icon className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h4 className="font-semibold text-base md:text-lg mb-1 break-words">{feature.title}</h4>
+                <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">{feature.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Stats */}
+        <div className="grid grid-cols-2 gap-3 md:gap-4 pt-3 md:pt-4">
+          <div className="text-center p-3 md:p-4 rounded-lg bg-primary/5 border border-primary/10">
+            <div className="text-xl md:text-2xl font-bold text-primary">100%</div>
+            <div className="text-xs md:text-sm text-muted-foreground">Certificate Issuance</div>
+          </div>
+          <div className="text-center p-3 md:p-4 rounded-lg bg-accent/5 border border-accent/10">
+            <div className="text-xl md:text-2xl font-bold text-accent">2K+</div>
+            <div className="text-xs md:text-sm text-muted-foreground">Certified Alumni</div>
+          </div>
+        </div>
+
+        {/* Demo Certificate Button */}
+        <div className="pt-4 md:pt-6">
+          <Button 
+            size="lg"
+            className="w-full text-sm md:text-base h-11 md:h-12 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
+            onClick={() => window.open('https://res.cloudinary.com/dhe93bqbx/image/upload/v1762614386/DEMO_xwkhv3.png', '_blank')}
+          >
+            <Eye className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+            View Demo Certificate
+          </Button>
+        </div>
+      </motion.div>
+    </div>
+
+    {/* Certificate Types */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="mt-12 md:mt-16"
+    >
+      <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-center mb-8 md:mb-12">
+        Certificate <GradientText>Included</GradientText> With Every Course
+      </h3>
+      
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        {[
+          {
+            type: "Completion Certificate",
+            description: "Awarded to every student who successfully completes the course requirements",
+            color: "from-blue-500 to-cyan-500",
+            requirements: ["Complete all course modules", "Submit final project", "Pass all assessments"]
+          },
+          {
+            type: "Performance Recognition",
+            description: "Additional recognition for outstanding performance and project work",
+            color: "from-purple-500 to-pink-500",
+            requirements: ["Maintain high scores", "Excellent project quality", "Active participation"]
+          },
+          {
+            type: "Skill Validation",
+            description: "Validates your expertise in the specific technology or domain",
+            color: "from-orange-500 to-red-500",
+            requirements: ["Technical skill mastery", "Practical application", "Industry standards"]
+          }
+        ].map((cert, index) => (
+          <FloatingCard key={cert.type} delay={index * 0.1}>
+            <CardHeader className="pb-3">
+              <div className={`w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 bg-gradient-to-r ${cert.color} rounded-lg md:rounded-xl flex items-center justify-center mb-3 md:mb-4 shadow-lg`}>
+                <Award className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white" />
+              </div>
+              <CardTitle className="text-base md:text-lg lg:text-lg">{cert.type}</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 md:space-y-4">
+              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{cert.description}</p>
+              <div className="space-y-2">
+                <h4 className="font-semibold text-xs md:text-sm">Requirements:</h4>
+                <ul className="space-y-1">
+                  {cert.requirements.map((req, idx) => (
+                    <li key={idx} className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <CheckCircle2 className="w-3 h-3 text-green-500 flex-shrink-0" />
+                      <span className="break-words">{req}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </CardContent>
+          </FloatingCard>
+        ))}
+      </div>
+    </motion.div>
+
+    {/* Final CTA */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="mt-12 md:mt-16 text-center"
+    >
+      <Card className="bg-gradient-to-r from-primary/10 to-accent/10 border-primary/20">
+        <CardContent className="py-6 md:py-8 px-4 md:px-6">
+          <div className="flex flex-col items-center gap-4 md:gap-6">
+            <div className="text-center">
+              <h4 className="text-lg md:text-xl font-bold mb-1 md:mb-2">Ready to Earn Your Certificate?</h4>
+              <p className="text-muted-foreground text-sm md:text-base max-w-2xl">
+                Enroll in any of our courses and receive your industry-recognized certificate upon successful completion.
+              </p>
+            </div>
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
+              onClick={() => {
+                const coursesSection = document.getElementById('courses-grid');
+                coursesSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+            >
+              <Award className="w-5 h-5 mr-2" />
+              Browse Courses
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+    </motion.div>
+  </div>
+</section>
       {/* Success Stories */}
       <section className="py-20 bg-gradient-to-b from-background to-accent/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
