@@ -99,7 +99,7 @@ export default function About() {
     },
     {
       icon: Shield,
-      title: "Money-Back Guarantee",
+      title: "Guarantee Satisfaction",
       description: "Guaranteed satisfaction Industry level training with mentro and leadership skills."
     }
   ];
