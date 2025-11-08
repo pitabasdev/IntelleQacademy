@@ -213,7 +213,7 @@ export default function Courses() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <TextReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Why Choose <GradientText>IntelleQacademy</GradientText> Programs?
+              Why Choose <GradientText>IntelleQAcademy</GradientText> Programs?
             </h2>
           </TextReveal>
           <TextReveal delay={0.2}>
@@ -820,7 +820,7 @@ export default function Courses() {
                 role: "Full Stack Developer",
                 company: "Google",
                 course: "MERN Stack",
-                testimonial: "IntelleQacademy's MERN Stack course was life-changing. The hands-on projects and expert mentorship helped me land my dream job at Google!",
+                testimonial: "IntelleQAcademy's MERN Stack course was life-changing. The hands-on projects and expert mentorship helped me land my dream job at Google!",
                 salary: "₹28 LPA"
               },
               {
@@ -962,7 +962,7 @@ export default function Courses() {
                   Ready to Start Your <GradientText>Tech Journey</GradientText>?
                 </h2>
                 <p className="text-xl text-muted-foreground">
-                  Join thousands of successful learners who transformed their careers with IntelleQacademy. Get personalized guidance from our advisors.
+                  Join thousands of successful learners who transformed their careers with IntelleQAcademy. Get personalized guidance from our advisors.
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center pt-4">
                   <Link href="/quote">

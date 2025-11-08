@@ -394,7 +394,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="max-w-3xl mx-auto text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed mb-12"
           >
-            Join IntelleQacademy where learning meets innovation.
+            Join IntelleQAcademy where learning meets innovation.
             Gain hands-on experience through live projects, expert mentorship, and
             startup-ready training programs designed to shape tomorrow’s leaders.
           </motion.p>
@@ -513,9 +513,9 @@ export default function Home() {
               />
             </div>
             <div className="order-1 lg:order-2 space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold">About IntelleQacademy</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">About IntelleQAcademy</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                At IntelleQacademy, we bridge the gap between education and employment. Our programs are designed by industry professionals to help students and professionals gain in-demand technical skills in MERN Stack, Data Science, Cyber Security, DevOps, AI, and more.
+                At IntelleQAcademy, we bridge the gap between education and employment. Our programs are designed by industry professionals to help students and professionals gain in-demand technical skills in MERN Stack, Data Science, Cyber Security, DevOps, AI, and more.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 With expert mentorship, real-world projects, and placement support, we ensure our learners are not just educated, but job-ready and future-proof.
@@ -547,7 +547,7 @@ export default function Home() {
             animate={featuresInView ? { opacity: 1, y: 0 } : {}}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose IntelleQacademy</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose IntelleQAcademy</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We provide everything you need to succeed in your tech career
             </p>
@@ -795,7 +795,7 @@ export default function Home() {
                 Step into an immersive learning experience powered by cutting-edge technology, live projects, and community-driven growth. Our platform combines theory with practice, ensuring you master real-world skills.
               </p>
               <div className="space-y-3">
-                {["Interactive 3D Learning Environment", "Live Code Collaboration", "Instant Feedback & Support"].map((feature) => (
+                {["Interactive 1 on 1 Learning Environment", "Live Code Collaboration", "Instant Feedback & Support"].map((feature) => (
                   <div key={feature} className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
                       <CheckCircle2 className="w-5 h-5 text-primary" />
@@ -1268,7 +1268,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose <GradientText>IntelleQacademy</GradientText>?
+              Why Choose <GradientText>IntelleQAcademy</GradientText>?
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-2">
               LEARNING CHALLENGES - HOW WE ENCOUNTER
@@ -2111,7 +2111,7 @@ export default function Home() {
             className="space-y-8"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white">
-              Don't just learn build, create, and innovate with IntelleQacademy
+              Don't just learn build, create, and innovate with IntelleQAcademy
             </h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
               Transform your career with industry-ready skills. Join thousands of successful alumni who started their tech journey with us.

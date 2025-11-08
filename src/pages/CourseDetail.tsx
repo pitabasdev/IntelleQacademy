@@ -593,7 +593,7 @@ export default function CourseDetail() {
             Transform Your Career with {course.title}
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Join thousands of successful professionals who started their journey with IntelleQacademy
+            Join thousands of successful professionals who started their journey with IntelleQAcademy
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button

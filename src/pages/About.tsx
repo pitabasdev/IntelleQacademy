@@ -100,7 +100,7 @@ export default function About() {
     {
       icon: Shield,
       title: "Money-Back Guarantee",
-      description: "Full refund if you're not satisfied within the first week"
+      description: "Guaranteed satisfaction Industry level training with mentro and leadership skills."
     }
   ];
 
@@ -347,7 +347,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose IntelleQacademy?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose IntelleQAcademy?</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               What sets us apart from other training platforms
             </p>
@@ -619,41 +619,7 @@ export default function About() {
             </GlassCard>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={worldwideInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12"
-          >
-            <Card className="text-center p-6 hover-elevate transition-all">
-              <CardContent className="p-0">
-                <Globe className="w-12 h-12 mx-auto mb-4 text-green-500" />
-                <h3 className="font-bold text-lg mb-2">San Francisco</h3>
-                <p className="text-sm text-muted-foreground">USA Headquarters</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center p-6 hover-elevate transition-all">
-              <CardContent className="p-0">
-                <Globe className="w-12 h-12 mx-auto mb-4 text-blue-500" />
-                <h3 className="font-bold text-lg mb-2">London</h3>
-                <p className="text-sm text-muted-foreground">European Office</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center p-6 hover-elevate transition-all">
-              <CardContent className="p-0">
-                <Globe className="w-12 h-12 mx-auto mb-4 text-purple-500" />
-                <h3 className="font-bold text-lg mb-2">Berlin</h3>
-                <p className="text-sm text-muted-foreground">Germany Office</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center p-6 hover-elevate transition-all">
-              <CardContent className="p-0">
-                <Globe className="w-12 h-12 mx-auto mb-4 text-red-500" />
-                <h3 className="font-bold text-lg mb-2">Bangalore</h3>
-                <p className="text-sm text-muted-foreground">India HQ</p>
-              </CardContent>
-            </Card>
-          </motion.div>
+
         </div>
       </section>
 
